@@ -1,0 +1,89 @@
+/* Reset styles and set global settings */
+body {
+    background-color: #1e1e1e;
+    font-family: 'Quicksand', sans-serif; /* Custom font for more character */
+    color: #fff;
+}
+
+/* Center the content and add padding */
+.wrapper {
+    margin: 0 auto;
+}
+
+/* Create a flex container with wrapping for inner content */
+.inner-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px;
+}
+
+/* Styles for the contact section */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.contact h1 {
+    background-color: #0077B5; /* Custom green color for header */
+    padding: 0.1em .1em;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.link-container {
+    display: flex;
+    justify-content: center; /* Align items horizontally at the center */
+    
+}
+
+.contact a {
+    display: contents;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px; /* Adjust margin for spacing between links */
+}
+
+.contact .link-text:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    height: 20px;
+    margin-right: 5px; /* Adjust margin for spacing between logo and text */
+}
+
+.link-text {
+    vertical-align: top;
+}
+
+.resume iframe {
+    width: 80vh;
+    height: 85vh; /* Set height to 100% of viewport height */
+    margin: auto;
+    display: block;
+}
+
+
+/* Media Query for screens smaller than 600px */
+@media only screen and (max-width: 600px) {
+    .contact {
+        flex-direction: column; /* Display items left to right */
+        justify-content: center; /* Align items horizontally at the center */
+    }
+
+    .contact a {
+        display: flex;
+        margin: 0 10px;
+    }
+
+    .resume iframe {
+        width: 100%;
+    }
+}

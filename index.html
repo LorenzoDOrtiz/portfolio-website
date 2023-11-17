@@ -7,34 +7,53 @@
     <meta name="description" content="Software Developer">
     <title>Portfolio</title>
     <link rel="icon" type="image/x-icon" href="resources/images/logos/l-solid.svg">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
     <main class="wrapper">
         <div class="inner-wrapper">
             <div class="contact">
-                <h1>Lorenzo Ortiz</h1>
-                <div class="name">
+                <h1 id="dynamicWidth">Lorenzo Ortiz</h1>
+                <div class="link-container">
                     <p>
                         <a href="mailto:contact@lorenzodortiz.com">
-                            <img class="logo" src="resources/images/logos/envelope-solid.svg" alt="email logo"> contact@lorenzodortiz.com
+                            <img class="logo" src="resources/images/logos/envelope-solid.svg" alt="email logo">
+                            <span class="link-text">contact@lorenzodortiz.com&nbsp;&nbsp;</span>
                         </a>
                         <a href="https://github.com/LorenzoDOrtiz">
-                            <img class="logo" src="resources/images/logos/github.svg" alt="github logo"> github.com/lorenzodortiz
+                            <img class="logo" src="resources/images/logos/github.svg" alt="github logo">
+                            <span class="link-text">github.com/lorenzodortiz&nbsp;&nbsp;</span>
                         </a>
-                        <a href="www.linkedin.com/in/lorenzodortiz">
-                            <img class="logo" src="resources/images/logos/linkedin.svg" alt="linkedin logo"> linkedin.com/in/lorenzodortiz
+                        <a href="https://www.linkedin.com/in/lorenzodortiz">
+                            <img class="logo" src="resources/images/logos/linkedin.svg" alt="linkedin logo">
+                            <span class="link-text">linkedin.com/in/lorenzodortiz&nbsp;&nbsp;</span>
                         </a>
                     </p>
                 </div>
             </div>
         </div>
         <div class="resume">
-            <iframe src="resources/documents/Resume.pdf"
-                width="70%" height="600px" style="border: none; margin: 20px auto; display: block;"></iframe>
+            <iframe src="resources/documents/Resume.pdf"></iframe>
         </div>
     </main>
+
+    <script>
+        function adjustHeaderWidth() {
+            var header = document.getElementById('dynamicWidth');
+            var paragraph = document.querySelector('.link-container p');
+            var paragraphWidth = paragraph.offsetWidth;
+
+            header.style.width = paragraphWidth + 'px';
+        }
+
+        // Set initial width on page load
+        adjustHeaderWidth();
+
+        // Update width on window resize
+        window.addEventListener('resize', adjustHeaderWidth);
+    </script>
 </body>
 
 </html>
