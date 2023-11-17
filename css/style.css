@@ -56,7 +56,7 @@ body {
 
 /* Add animation for logo spin effect */
 .logo {
-    height: 30px;
+    height: 40px;
     margin-right: 5px;
     animation: spin .5s linear; /* Adjust the duration and timing function as needed */
 }
