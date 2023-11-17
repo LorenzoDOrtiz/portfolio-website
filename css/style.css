@@ -1,7 +1,7 @@
 /* Reset styles and set global settings */
 body {
     background-color: #1e1e1e;
-    font-family: 'Quicksand', sans-serif; /* Custom font for more character */
+    font-family: 'monospace', "Quicksand", sans-serif; /* Custom font for more character */
     color: #fff;
 }
 
@@ -54,9 +54,22 @@ body {
     text-decoration: underline;
 }
 
+/* Add animation for logo spin effect */
 .logo {
-    height: 20px;
-    margin-right: 5px; /* Adjust margin for spacing between logo and text */
+    height: 30px;
+    margin-right: 5px;
+    animation: spin .5s linear; /* Adjust the duration and timing function as needed */
+}
+
+.logo:hover{
+    animation: spin .75s linear infinite; /* Adjust the duration and timing function as needed */
+
+
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .link-text {
@@ -84,6 +97,7 @@ body {
     }
 
     .resume iframe {
-        width: 100%;
+        width: 80%;
+        
     }
 }
