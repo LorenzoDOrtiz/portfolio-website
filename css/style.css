@@ -270,13 +270,13 @@ section#contact {
 }
 
 section#contact form {
-    max-width: 600px;
+    
 }
 
 section#contact form label,
 section#contact form input,
 section#contact form textarea {
-    display: fle;
+    display: flex;
     margin-bottom: 15px;
 }
 
@@ -287,6 +287,7 @@ section#contact form textarea {
 
 section#contact form textarea {
     width: 600px;
+    max-width: 600px;
 }
 
 section#contact form input[type="submit"] {
@@ -319,7 +320,7 @@ section#contact form input[type="submit"]:hover {
 }
 
 #backToTopBtn.show {
-    opacity: 1;
+    opacity: 0;
     /* Show the button by setting opacity to 1 */
 }
 
@@ -368,6 +369,8 @@ footer {
     font-size: 1.2em;
 }
 
+/* ... (your existing styles) ... */
+
 @media only screen and (max-width: 768px) {
     * {
         justify-content: center;
@@ -376,73 +379,65 @@ footer {
         text-align: center;
     }
 
-    /* Adjustments for mobile screens */
-    @media only screen and (max-width: 768px) {
-        header {
-            justify-content: space-between;
-            padding: 15px 5%;
-        }
+    header {
+        justify-content: space-between;
+        padding: 15px 5%;
+    }
 
-        .logo {
-            width: 150px;
-            /* Adjust the size as needed */
-            margin-right: 0;
-        }
+    .logo {
+        width: 150px;
+        margin-right: 0;
+    }
 
-        .nav_links {
-            display: none;
-            /* Hide the navigation links by default */
-            flex-direction: column;
-            text-align: center;
-            width: 100%;
-            background-color: #24252a;
-            position: absolute;
-            top: 60px;
-            /* Adjust the top margin based on your header height */
-            right: 0;
-            z-index: 99;
-        }
+    .nav_links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        background-color: #24252a;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        z-index: 99;
+    }
 
-        .nav_links.show {
-            display: flex;
-        }
+    .nav_links.show {
+        display: flex;
+    }
 
-        .nav_links li {
-            padding: 15px;
-        }
+    .nav_links li {
+        padding: 15px;
+    }
 
-        .cta {
-            display: none;
-            /* Hide the "Contact" button on small screens */
-        }
+    .cta {
+        display: none;
+    }
 
-        /* Style for the hamburger menu icon */
-        /* Add this to the existing CSS file */
+    .menu-icon {
+        cursor: pointer;
+        display: block;
+        margin-left: auto;
+        width: 30px;
+        margin-top: 5px;
+    }
 
-        .menu-icon {
-            cursor: pointer;
-            display: block;
-            margin-left: auto;
-            width: 30px;
-            margin-top: 5px;
-        }
+    .menu-icon div {
+        width: 30px;
+        height: 3px;
+        background-color: #edf0f1;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
 
-        .menu-icon div {
-            width: 30px;
-            height: 3px;
-            background-color: #edf0f1;
-            margin: 6px 0;
-            transition: 0.4s;
-        }
+    .menu-icon.active div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
 
-        .menu-icon.active div:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
+    .menu-icon.active div:nth-child(2) {
+        opacity: 0;
+    }
 
-        .menu-icon.active div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-icon.active div:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
+    .menu-icon.active div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}

@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var backToTopButton = document.getElementById("backToTopBtn");
 
     window.addEventListener("scroll", function () {
-        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        if (window.scrollY > 50) { 
             backToTopButton.classList.add("show");
         } else {
             backToTopButton.classList.remove("show");
@@ -54,15 +54,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Form submission with AJAX
-document.addEventListener("DOMContentLoaded", function () {
-    var contactForm = document.getElementById("contactForm");
-    var confirmationMessage = document.getElementById("confirmationMessage");
 
-    if (contactForm) {
-        contactForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            // ... (form submission logic)
-        });
-    }
-});

@@ -34,11 +34,12 @@ try {
     $firstname = $_POST['firstname'];
     $lastname  = $_POST['lastname'];
     $subject   = $_POST['subject'];
+    $message   = $_POST['message'];
 
     // Set the email subject and body
     $mail->Subject = $subject;
-    $mail->Body    = "First Name: $firstname<br>Last Name: $lastname<br>Subject: $subject";  // Include first and last name in the email body
-    $mail->AltBody = "First Name: $firstname\nLast Name: $lastname\nSubject: $subject";  // Plain text version
+    $mail->Body    = "First Name: $firstname<br>Last Name: $lastname<br>Subject: $subject<br>Message: $message";
+    $mail->AltBody = "First Name: $firstname\nLast Name: $lastname\nSubject: $subject\nMessage: $message";
 
     $mail->send();
     echo 'Message has been sent';
