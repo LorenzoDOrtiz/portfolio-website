@@ -271,13 +271,12 @@ section#contact {
 
 section#contact form {
     max-width: 600px;
-    width: 100%;
 }
 
 section#contact form label,
 section#contact form input,
 section#contact form textarea {
-    display: block;
+    display: flex;
     margin-bottom: 15px;
 }
 
@@ -287,8 +286,7 @@ section#contact form textarea {
 }
 
 section#contact form textarea {
-    height: 200px;
-    width: 100%;
+    width: 600px;
 }
 
 section#contact form input[type="submit"] {
@@ -342,6 +340,11 @@ footer {
 
 .copyright {
     font-size: 14px;
+}
+
+.copyright a{
+    font-size: 14px;
+    text-decoration: underline;
 }
 
 
