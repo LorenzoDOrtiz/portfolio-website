@@ -107,7 +107,7 @@ main {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: calc(100vh - 80px);
+    height: 100vh;
     /* Adjusted height to account for padding */
     display: flex;
     flex-direction: column;
@@ -209,7 +209,7 @@ main {
 .project-info {
     flex: 1;
     text-align: left;
-    padding: 50px 20px;
+    padding: 0 20px;
 }
 
 .tags {
@@ -364,3 +364,82 @@ footer {
     margin-top: 10px;
     font-size: 1.2em;
 }
+
+@media only screen and (max-width: 768px) {
+    * {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Adjustments for mobile screens */
+    @media only screen and (max-width: 768px) {
+        header {
+            justify-content: space-between;
+            padding: 15px 5%;
+        }
+
+        .logo {
+            width: 50px;
+            /* Adjust the size as needed */
+            margin-right: 0;
+        }
+
+        .nav_links {
+            display: none;
+            /* Hide the navigation links by default */
+            flex-direction: column;
+            text-align: center;
+            width: 100%;
+            background-color: #24252a;
+            position: absolute;
+            top: 60px;
+            /* Adjust the top margin based on your header height */
+            right: 0;
+            z-index: 99;
+        }
+
+        .nav_links.show {
+            display: flex;
+        }
+
+        .nav_links li {
+            padding: 15px;
+        }
+
+        .cta {
+            display: none;
+            /* Hide the "Contact" button on small screens */
+        }
+
+        /* Style for the hamburger menu icon */
+        /* Add this to the existing CSS file */
+
+        .menu-icon {
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+            width: 30px;
+            margin-top: 5px;
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 3px;
+            background-color: #edf0f1;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .menu-icon.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .menu-icon.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-icon.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }

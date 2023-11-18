@@ -13,6 +13,13 @@
 <body class="container">
     <div class="wrapper">
         <header>
+            <!-- Add this inside your <header> element, before the <img class="logo" ...> -->
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
             <img class="logo" src="resources/images/logos/l-solid.svg" alt="logo">
             <nav>
                 <ul class="nav_links">
@@ -218,6 +225,21 @@
         });
 
     </script>
+
+    <!-- Add this before the closing </body> tag -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuIcon = document.querySelector('.menu-icon');
+            const navLinks = document.querySelector('.nav_links');
+
+            menuIcon.addEventListener('click', function () {
+                navLinks.classList.toggle('show');
+                menuIcon.classList.toggle('active');
+            });
+        });
+    </script>
+
 
     <footer>
         <div class="container">
