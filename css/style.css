@@ -269,10 +269,6 @@ section#contact {
     background-color: #2c2f3e;
 }
 
-section#contact form {
-    
-}
-
 section#contact form label,
 section#contact form input,
 section#contact form textarea {
@@ -320,7 +316,7 @@ section#contact form input[type="submit"]:hover {
 }
 
 #backToTopBtn.show {
-    opacity: 0;
+    opacity: 1;
     /* Show the button by setting opacity to 1 */
 }
 
