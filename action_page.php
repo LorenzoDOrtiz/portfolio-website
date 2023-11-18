@@ -18,50 +18,48 @@ $imap_server = 'imap.titan.email';
 $imap_port = 993;
 
 function send_email() {
-    global $sender_email, $sender_password, $recipient_email, $subject, $body, $smtp_server, $smtp_port, $imap_server, $imap_port;
+global $sender_email, $sender_password, $recipient_email, $subject, $body, $smtp_server, $smtp_port, $imap_server, $imap_port;
 
-    // Create a PHPMailer object
-    $mail = new \PHPMailer\PHPMailer\PHPMailer();
+// Create a PHPMailer object
+$mail = new \PHPMailer\PHPMailer\PHPMailer();
 
-    try {
-        // Configure the SMTP settings
-        $mail->isSMTP();
-        $mail->Host = $smtp_server;
-        $mail->Port = $smtp_port;
-        $mail->SMTPAuth = true;
-        $mail->Username = $sender_email;
-        $mail->Password = $sender_password;
-        $mail->SMTPSecure = 'tls';
+try {
+// Configure the SMTP settings
+$mail->isSMTP();
+$mail->Host = $smtp_server;
+$mail->Port = $smtp_port;
+$mail->SMTPAuth = true;
+$mail->Username = $sender_email;
+$mail->Password = $sender_password;
+$mail->SMTPSecure = 'tls';
 
-        // Set the email content
-        $mail->setFrom($sender_email);
-        $mail->addAddress($recipient_email);
-        $mail->Subject = $subject;
-        $mail->Body = $body;
+// Set the email content
+$mail->setFrom($sender_email);
+$mail->addAddress($recipient_email);
+$mail->Subject = $subject;
+$mail->Body = $body;
 
-        // Debugging information
-        $mail->SMTPDebug = 2;
+// Send the email
+if ($mail->send()) {
+echo 'Email sent successfully.';
+} else {
+echo 'Error sending email: ' . $mail->ErrorInfo;
+return;
+}
 
-        // Send the email
-        if ($mail->send()) {
-            echo 'Email sent successfully.';
-        } else {
-            echo 'Error sending email: ' . $mail->ErrorInfo;
-            return;
-        }
-
-        // Append the sent email to the IMAP server's "Sent" folder
-        $imap_stream = imap_open("{" . $imap_server . ":" . $imap_port . "/ssl/novalidate-cert}", $sender_email, $sender_password);
-        if ($imap_stream) {
-            imap_append($imap_stream, "{" . $imap_server . ":" . $imap_port . "/ssl/novalidate-cert}Sent", $mail->getSentMIMEMessage());
-            echo 'Email appended to "Sent" folder.';
-            imap_close($imap_stream);
-        } else {
-            echo 'Error appending email to "Sent" folder.';
-        }
-    } catch (Exception $e) {
-        echo 'Error sending email: ' . $e->getMessage();
-    }
+// Append the sent email to the IMAP server's "Sent" folder
+// Enable the IMAP extension from your php.ini file
+$imap_stream = imap_open("{" . $imap_server . ":" . $imap_port . "/ssl/novalidate-cert}", $sender_email, $sender_password);
+if ($imap_stream) {
+imap_append($imap_stream, "{" . $imap_server . ":" . $imap_port . "/ssl/novalidate-cert}Sent", $mail->getSentMIMEMessage());
+echo 'Email appended to "Sent" folder.';
+imap_close($imap_stream);
+} else {
+echo 'Error appending email to "Sent" folder.';
+}
+} catch (Exception $e) {
+echo 'Error sending email: ' . $e->getMessage();
+}
 }
 
 // Call the function to send the email and append it to the "Sent" folder
