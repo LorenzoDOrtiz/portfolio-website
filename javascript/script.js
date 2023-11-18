@@ -25,7 +25,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function scrollToTop(duration) {
-        // ... (scrolling logic)
+        var start = window.pageYOffset;
+        var startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+        function scroll() {
+            var now = 'now' in window.performance ? performance.now() : new Date().getTime();
+            var time = Math.min(1, (now - startTime) / duration);
+
+            window.scroll(0, Math.ceil((1 - time) * start + time * 0));
+            
+            if (time < 1) {
+                requestAnimationFrame(scroll);
+            }
+        }
+
+        scroll();
     }
 });
 

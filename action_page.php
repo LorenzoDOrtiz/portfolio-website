@@ -1,43 +1,69 @@
 <?php
+// Include the PHPMailer library
+require 'vendor/autoload.php';
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// Email configuration
+$sender_email = 'contact@lorenzodortiz.com';
+$sender_password = 'W2vZ0uiFUHPF&aa1';
+$recipient_email = 'contact@lorenzodortiz.com';
+$subject = 'Testing email script';
+$body = 'This is a test email sent from a PHP script.';
 
+// SMTP (sending) server details
+$smtp_server = 'smtp.titan.email';
+$smtp_port = 587;
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect form data
-    $fname = $_POST['firstname'];
-    $lname = $_POST['lastname'];
-    $subject = $_POST['subject'];
+// IMAP (receiving) server details
+$imap_server = 'imap.titan.email';
+$imap_port = 993;
 
-    // Create email message
-    $message = "First Name: $fname\n";
-    $message .= "Last Name: $lname\n";
-    $message .= "Subject: $subject\n";
+function send_email() {
+    global $sender_email, $sender_password, $recipient_email, $subject, $body, $smtp_server, $smtp_port, $imap_server, $imap_port;
 
-    // Set recipient email address
-    $to = "contact@lorenzodortiz.com";
+    // Create a PHPMailer object
+    $mail = new \PHPMailer\PHPMailer\PHPMailer();
 
-    // Set email subject
-    $subject = "New Contact Form Submission";
+    try {
+        // Configure the SMTP settings
+        $mail->isSMTP();
+        $mail->Host = $smtp_server;
+        $mail->Port = $smtp_port;
+        $mail->SMTPAuth = true;
+        $mail->Username = $sender_email;
+        $mail->Password = $sender_password;
+        $mail->SMTPSecure = 'tls';
 
-    // Set additional headers
-    $headers = "From: $fname $lname <$to>";
+        // Set the email content
+        $mail->setFrom($sender_email);
+        $mail->addAddress($recipient_email);
+        $mail->Subject = $subject;
+        $mail->Body = $body;
 
-    // Attempt to send the email
-    if (mail($to, $subject, $message, $headers)) {
-        // Email sent successfully
-        $response = array('status' => 'success', 'message' => 'Message sent successfully!');
-    } else {
-        // Email sending failed
-        $response = array('status' => 'error', 'message' => 'Failed to send message. Please try again.');
+        // Debugging information
+        $mail->SMTPDebug = 2;
+
+        // Send the email
+        if ($mail->send()) {
+            echo 'Email sent successfully.';
+        } else {
+            echo 'Error sending email: ' . $mail->ErrorInfo;
+            return;
+        }
+
+        // Append the sent email to the IMAP server's "Sent" folder
+        $imap_stream = imap_open("{" . $imap_server . ":" . $imap_port . "/ssl/novalidate-cert}", $sender_email, $sender_password);
+        if ($imap_stream) {
+            imap_append($imap_stream, "{" . $imap_server . ":" . $imap_port . "/ssl/novalidate-cert}Sent", $mail->getSentMIMEMessage());
+            echo 'Email appended to "Sent" folder.';
+            imap_close($imap_stream);
+        } else {
+            echo 'Error appending email to "Sent" folder.';
+        }
+    } catch (Exception $e) {
+        echo 'Error sending email: ' . $e->getMessage();
     }
-
-    // Convert the response array to JSON
-    echo json_encode($response);
-} else {
-    // Redirect to the homepage if accessed directly
-    header("Location: /");
-    exit();
 }
+
+// Call the function to send the email and append it to the "Sent" folder
+send_email();
 ?>
