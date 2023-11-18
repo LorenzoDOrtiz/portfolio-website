@@ -1,67 +1,47 @@
 <?php
-// Include the PHPMailer library
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
 require 'vendor/autoload.php';
 
-// Email configuration
-$sender_email = 'contact@lorenzodortiz.com';
-$sender_password = 'W2vZ0uiFUHPF&aa1';
-$recipient_email = 'contact@lorenzodortiz.com';
-$subject = 'Testing email script';
-$body = 'This is a test email sent from a PHP script.';
-
-// SMTP (sending) server details
-$smtp_server = 'smtp.titan.email';
-$smtp_port = 587;
-
-// IMAP (receiving) server details
-$imap_server = 'imap.titan.email';
-$imap_port = 993;
-
-function send_email() {
-global $sender_email, $sender_password, $recipient_email, $subject, $body, $smtp_server, $smtp_port, $imap_server, $imap_port;
-
-// Create a PHPMailer object
-$mail = new \PHPMailer\PHPMailer\PHPMailer();
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
 
 try {
-// Configure the SMTP settings
-$mail->isSMTP();
-$mail->Host = $smtp_server;
-$mail->Port = $smtp_port;
-$mail->SMTPAuth = true;
-$mail->Username = $sender_email;
-$mail->Password = $sender_password;
-$mail->SMTPSecure = 'tls';
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'SMTP.titan.email';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'contact@lorenzodortiz.com';                     //SMTP username
+    $mail->Password   = 'W2vZ0uiFUHPF&aa1';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-// Set the email content
-$mail->setFrom($sender_email);
-$mail->addAddress($recipient_email);
-$mail->Subject = $subject;
-$mail->Body = $body;
+    //Recipients
+    $mail->setFrom('from@example.com', 'Mailer');
+    $mail->addAddress('contact@lorenzodortiz.com', 'Lorenzo Ortiz');     //Add a recipient
+    $mail->addAddress('ellen@example.com');               //Name is optional
+    $mail->addReplyTo('info@example.com', 'Information');
+    $mail->addCC('cc@example.com');
+    $mail->addBCC('bcc@example.com');
 
-// Send the email
-if ($mail->send()) {
-echo 'Email sent successfully.';
-} else {
-echo 'Error sending email: ' . $mail->ErrorInfo;
-return;
-}
+    //Attachments
+    $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
-// Append the sent email to the IMAP server's "Sent" folder
-// Enable the IMAP extension from your php.ini file
-$imap_stream = imap_open("{" . $imap_server . ":" . $imap_port . "/ssl/novalidate-cert}", $sender_email, $sender_password);
-if ($imap_stream) {
-imap_append($imap_stream, "{" . $imap_server . ":" . $imap_port . "/ssl/novalidate-cert}Sent", $mail->getSentMIMEMessage());
-echo 'Email appended to "Sent" folder.';
-imap_close($imap_stream);
-} else {
-echo 'Error appending email to "Sent" folder.';
-}
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Here is the subject';
+    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+    echo 'Message has been sent';
 } catch (Exception $e) {
-echo 'Error sending email: ' . $e->getMessage();
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-}
-
-// Call the function to send the email and append it to the "Sent" folder
-send_email();
-?>
