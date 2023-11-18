@@ -40,7 +40,7 @@ header {
 
 .logo {
     cursor: pointer;
-    width: 20px;
+    width: 150px;
     margin-right: auto;
 }
 
@@ -276,7 +276,7 @@ section#contact form {
 section#contact form label,
 section#contact form input,
 section#contact form textarea {
-    display: flex;
+    display: fle;
     margin-bottom: 15px;
 }
 
@@ -384,7 +384,7 @@ footer {
         }
 
         .logo {
-            width: 50px;
+            width: 150px;
             /* Adjust the size as needed */
             margin-right: 0;
         }
