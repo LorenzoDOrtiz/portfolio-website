@@ -161,6 +161,8 @@
                         style="height:200px"></textarea>
 
                     <input type="submit" value="Submit">
+
+                    <div id="confirmationMessage"></div>
                 </form>
             </div>
         </section>
@@ -240,17 +242,42 @@
         });
     </script>
 
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="copyright">
-                    <p>Website Designed by <a href= https://www.linkedin.com/in/lorenzodortiz/>Lorenzo Ortiz</a></p>
-                </div>
-            </div>
-        </div>
-
-
-</body>
-
-</html>
+    <!-- Add the JavaScript code for handling form submission and displaying confirmation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var contactForm = document.getElementById("contactForm");
+            var confirmationMessage = document.getElementById("confirmationMessage");
+    
+            if (contactForm) {
+                contactForm.addEventListener("submit", function (e) {
+                    e.preventDefault();
+    
+                    // Use FormData to serialize the form data
+                    var formData = new FormData(contactForm);
+    
+                    // Make an AJAX request to the action_page.php
+                    fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            // Show green success confirmation
+                            confirmationMessage.style.color = 'green';
+                            confirmationMessage.textContent = data.message;
+                        } else {
+                            // Show red failure confirmation
+                            confirmationMessage.style.color = 'red';
+                            confirmationMessage.textContent = data.message;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                });
+            }
+        });
+    </script>
+    </body>
+    </html>
