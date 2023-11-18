@@ -23,6 +23,7 @@ try {
 
     //Recipients
     $mail->setFrom('contact@lorenzodortiz.com', 'Portfolio');
+    $mail->addAddress('contact@lorenzodortiz.com', 'Portfolio');     //Add a recipient
     $mail->addReplyTo('contact@lorenzodortiz.com', 'Portfolio');
 
     //Attachments
