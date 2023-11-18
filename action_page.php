@@ -15,7 +15,7 @@ try {
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'SMTP.titan.email';                     //Set the SMTP server to send through
+    $mail->Host       = 'smtp.titan.email';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'contact@lorenzodortiz.com';                     //SMTP username
     $mail->Password   = 'W2vZ0uiFUHPF&aa1';                               //SMTP password
@@ -23,12 +23,9 @@ try {
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('from@example.com', 'Mailer');
-    $mail->addAddress('contact@lorenzodortiz.com', 'Lorenzo Ortiz');     //Add a recipient
-    $mail->addAddress('ellen@example.com');               //Name is optional
-    $mail->addReplyTo('info@example.com', 'Information');
-    $mail->addCC('cc@example.com');
-    $mail->addBCC('bcc@example.com');
+    $mail->setFrom('info@lorenzodortiz.com', 'Portfolio');
+    $mail->addAddress('support@lorenzodortiz.com', 'Portfolio - Support');     //Add a recipient
+    $mail->addReplyTo('info@lorenzodortiz.com', 'Portfolio');
 
     //Attachments
     $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
