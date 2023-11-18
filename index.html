@@ -149,7 +149,7 @@
 
         <section id="contact" class="content-section">
             <div class="container">
-                <form action="action_page.php">
+                <form id="contactForm" action="action_page.php" method="POST">
                     <label for="fname">First Name</label>
                     <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
@@ -174,7 +174,7 @@
     <footer>
     <div class="container">
         <div class="footer-content">
-            <div class="copyright">
+            <div class="copyright"> <!-- Please leave this link to give me some credit for my work, thank you!-->
                 <p>Website Designed by <a href= https://www.linkedin.com/in/lorenzodortiz/>Lorenzo Ortiz</a></p>
             </div>
         </div>
@@ -256,8 +256,12 @@
             var confirmationMessage = document.getElementById("confirmationMessage");
     
             if (contactForm) {
-                contactForm.addEventListener("submit", function (e) {
-                    e.preventDefault();
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        
+    });
+}
+
     
                     // Use FormData to serialize the form data
                     var formData = new FormData(contactForm);
