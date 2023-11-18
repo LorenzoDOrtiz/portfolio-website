@@ -13,7 +13,6 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.titan.email';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -23,7 +22,7 @@ try {
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('info@lorenzodortiz.com', 'Portfolio');
+    $mail->setFrom('contact@lorenzodortiz.com', 'Portfolio');
     $mail->addAddress('support@lorenzodortiz.com', 'Portfolio - Support');     //Add a recipient
     $mail->addReplyTo('info@lorenzodortiz.com', 'Portfolio');
 
