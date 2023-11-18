@@ -3,57 +3,232 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Software Engineer">
     <title>Portfolio</title>
     <link rel="icon" type="image/x-icon" href="resources/images/logos/l-solid.svg">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
-    <main class="wrapper">
-        <div class="inner-wrapper">
-            <div class="contact">
-                <h1 id="dynamicWidth">Lorenzo Ortiz</h1>
-                <div class="link-container">
-                    <p>
-                        <a href="mailto:contact@lorenzodortiz.com">
-                            <img class="logo" src="resources/images/logos/envelope-solid.svg" alt="email logo">
-                            <span class="link-text">contact@lorenzodortiz.com</span>&nbsp;&nbsp;
-                        </a>
-                        <a href="https://github.com/LorenzoDOrtiz" target=”_blank”>
-                            <img class="logo" src="resources/images/logos/github.svg" alt="github logo">
-                            <span class="link-text">github.com/lorenzodortiz</span>&nbsp;&nbsp;
-                        </a>
-                        <a href="https://www.linkedin.com/in/lorenzodortiz" target=”_blank”>
-                            <img class="logo" src="resources/images/logos/linkedin.svg" alt="linkedin logo">
-                            <span class="link-text">linkedin.com/in/lorenzodortiz</span>&nbsp;&nbsp;
-                        </a>
-                    </p>
+<body class="container">
+    <div class="wrapper">
+        <header>
+            <img class="logo" src="resources/images/logos/l-solid.svg" alt="logo">
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <!-- Add the Blog link -->
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="#contact"><button>Contact</button></a>
+        </header>
+
+        <main>
+            <section id="top" class="content-section">
+                <div>
+                    <h2>Hey, I'm Lorenzo Ortiz</h2>
+                    <p>Software Engineering Student & Ethical Hacker.</p>
+                </div>
+            </section>
+
+            <section id="about" class="content-section">
+                <h2>About Me</h2>
+                <p>
+                    Hi, I'm <span class="highlight">Lorenzo Ortiz</span>, an <span class="highlight">Emergency Medical
+                        Technician (EMT)</span> currently residing in Yakima, WA. I play a crucial role in providing
+                    timely and quality care to patients in various emergency situations. My experience in <span
+                        class="highlight">electronic medical records</span> enhances the efficiency and accuracy of
+                    emergency response and documentation.
+                </p>
+                <p>
+                    In addition to my work in the medical field, I'm a <span class="highlight">Software Engineering
+                        student</span> at Western Governors University, driven by a passion for <span
+                        class="highlight">problem-solving</span> and technology. With a strong background in military
+                    medicine, having served as a <span class="highlight">combat medic</span> in the US Army for four
+                    years, I've received multiple honors for <span class="highlight">leadership</span>, <span
+                        class="highlight">medical preparedness</span>, and <span class="highlight">coordination
+                        skills</span> during deployments to Korea and assignments at Okubo Medical Clinic.
+                </p>
+                <p>
+                    I am eager to apply my diverse experience and technical skills to the software engineering field. I
+                    value <span class="highlight">teamwork</span>, <span class="highlight">learning</span>, and <span
+                        class="highlight">innovation</span>, and I am always open to new <span
+                        class="highlight">challenges</span> and <span class="highlight">opportunities</span>. Currently
+                    pursuing a <span class="highlight">Bachelor of Science in Software Engineering</span> at Western
+                    Governors University, I am authorized to work in the US for any employer.
+                </p>
+                <p>
+                    <strong>Learning Ethical Hacking:</strong> As part of my ongoing journey, I am also delving into the
+                    realm of <span class="highlight">ethical hacking</span>, exploring the intersection of <span
+                        class="highlight">technology</span>, <span class="highlight">security</span>, and <span
+                        class="highlight">problem-solving</span>.
+                </p>
+            </section>
+
+
+
+            <section id="projects" class="content-section">
+                <h2>Projects</h2>
+                <div class="project" data-skills="HTML CSS JavaScript">
+                    <!-- Project 1 -->
+                    <div class="project-details">
+                        <div class="project-photo">
+                            <!-- Placeholder for project photo -->
+                            <img src="assets/jpeg/explorer_QhSlg2mVBe.jpg" alt="Project 1">
+                        </div>
+                        <div class="project-info">
+                            <!-- Placeholder for project description -->
+                            <p>Project 1 description goes here...</p>
+                            <!-- Placeholder for project tags -->
+                            <div class="tags">Tags: Web Development, JavaScript, CSS</div>
+                            <!-- Buttons for GitHub and Live Demo -->
+                            <div class="project-buttons">
+                                <a href="https://github.com" target="_blank">GitHub</a>
+                                <a href="https://demo.com" target="_blank">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Project 1 -->
+
+                    <!-- Project 2 -->
+                    <div class="project" data-skills="JavaScript .NET">
+                        <div class="project-details">
+                            <div class="project-info">
+                                <!-- Placeholder for project description -->
+                                <p>Project 2 description goes here...</p>
+                                <!-- Placeholder for project tags -->
+                                <div class="tags">Tags: React, Node.js, MongoDB</div>
+                                <!-- Buttons for GitHub and Live Demo -->
+                                <div class="project-buttons">
+                                    <a href="https://github.com" target="_blank">GitHub</a>
+                                    <a href="https://demo.com" target="_blank">Live Demo</a>
+                                </div>
+                            </div>
+                            <div class="project-photo">
+                                <!-- Placeholder for project photo -->
+                                <img src="assets/jpeg/explorer_QhSlg2mVBe.jpg" alt="Project 2">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Project 2 -->
+
+                </div>
+            </section>
+            </section>
+
+            <section id="blog" class="content-section">
+                <h2>Blog</h2>
+                <!-- Add your content for the Blog section here -->
+            </section>
+
+            <!-- Replace the Resume section with the Certifications section -->
+            <section id="certifications" class="content-section">
+                <h2>Certifications</h2>
+                <br>
+                <!-- Add your certifications here -->
+                <div class="certification">
+                    <img src="assets/jpeg/Network+Certificate.jpg" alt="CompTIA Network+" width=800px>
+
+                </div>
+                <div class="certification">
+                    <img src="assets/jpeg/A+Certificate.jpg" alt="CompTIA A+" width=800px>
+
+                </div>
+            </section>
+        </main>
+
+        <section id="contact" class="content-section">
+            <div class="container">
+                <form action="action_page.php">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.."
+                        style="height:200px"></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Back to Top Button -->
+    <div id="backToTopBtn">&#8679;</div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var backToTopButton = document.getElementById("backToTopBtn");
+
+            window.addEventListener("scroll", function () {
+                if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                    backToTopButton.classList.add("show"); // Add the "show" class
+                } else {
+                    backToTopButton.classList.remove("show"); // Remove the "show" class
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                scrollToTop(1000); // Set the duration of the scroll animation (in milliseconds)
+            });
+
+            function scrollToTop(duration) {
+                var start = window.pageYOffset;
+                var startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+                function scroll() {
+                    var currentTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+                    var timeElapsed = currentTime - startTime;
+                    var nextScroll = easeInOutQuad(timeElapsed, start, -start, duration);
+                    document.documentElement.scrollTop = nextScroll;
+
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(scroll);
+                    }
+                }
+
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d / 2;
+                    if (t < 1) return c / 2 * t * t + b;
+                    t--;
+                    return -c / 2 * (t * (t - 2) - 1) + b;
+                }
+
+                requestAnimationFrame(scroll);
+            }
+        });
+
+    </script>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>&copy; Created by Lorenzo Ortiz</p>
                 </div>
             </div>
         </div>
-        <div class="resume">
-            <iframe src="resources/documents/LorenzoOrtizResume.pdf"></iframe>
-        </div>
-    </main>
+    </footer>
 
-    <script>
-        function adjustHeaderWidth() {
-            var header = document.getElementById('dynamicWidth');
-            var paragraph = document.querySelector('.link-container p');
-            var paragraphWidth = paragraph.offsetWidth;
-
-            header.style.width = paragraphWidth + 'px';
-        }
-
-        // Set initial width on page load
-        adjustHeaderWidth();
-
-        // Update width on window resize
-        window.addEventListener('resize', adjustHeaderWidth);
-    </script>
 </body>
 
 </html>
