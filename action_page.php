@@ -1,6 +1,6 @@
 <?php
 // Load environment variables from config.bash
-$configFile = __DIR__ . '/config.bash'; // corrected path
+$configFile = __DIR__ . 'config.bash'; // corrected path
 $configLines = explode("\n", file_get_contents($configFile));
 
 foreach ($configLines as $line) {
