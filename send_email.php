@@ -38,7 +38,7 @@ function send_email($user_name, $user_email, $email_subject, $email_body) {
         $mail->SMTPSecure = 'tls';
 
         // Set the email content
-        $mail->setFrom($user_email, $user_name); // Set the sender as the user's provided email and name
+        $mail->setFrom('contact@lorenzodortiz.com', $user_name); // Set the sender as the user's provided email and name
         $mail->addAddress($sender_email); // Set the recipient as your email address
         $mail->Subject = $email_subject;
         $mail->Body = $email_body;
@@ -54,6 +54,7 @@ function send_email($user_name, $user_email, $email_subject, $email_body) {
         echo 'Error sending email: ' . $e->getMessage();
     }
 }
+
 
 // Call the function to send the email
 send_email($user_name, $user_email, $email_subject, $email_body);
