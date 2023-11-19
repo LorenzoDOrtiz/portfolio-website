@@ -160,3 +160,6 @@ function resetFilters() {
     project.style.display = 'flex'; // Set display to 'flex' to maintain the flexbox layout
   });
 }
+function closeBanner() {
+    document.getElementById('inprogress-label').style.display = 'none';
+}

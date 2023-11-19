@@ -6,6 +6,56 @@
     font-family: "monospace", "Courier New", Lucida Console;
     text-decoration: none;
 }
+
+#inprogress-label {
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    background-color: red;
+    position: fixed;
+    top: 75px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to right, #ff3300, #feb47b);
+    background-size: 200% 100%;
+    animation: gradientAnimation 5s ease infinite;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#close-btn {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    color: white;
+    background-color: #333; /* Add a background color */
+    border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+    margin-top: 5px;
+}
+
+#close-btn:hover {
+    background-color: #555; /* Change background color on hover */
+    color: #ddd;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+
+.wrapper {
+    overflow: hidden; /* Hide any content that overflows the wrapper */
+}
 h2 {
     color: #ffffff 
 }
@@ -26,7 +76,7 @@ header {
     top: 0%;
     right: 0%;
     left: 0%;
-    z-index: 100;
+    z-index: 99;
     background-color: #1a1a1a;
     color: #ffffff;
 }
@@ -65,7 +115,10 @@ button:hover {
 .content-section {
     text-align: center;
     padding: 20px;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    overflow: hidden; /* Hide any content that overflows the padding */
 }
+
 /* Add the alternating background colors */
 .content-section:nth-child(odd) {
     background-color: #222222;
@@ -96,7 +149,7 @@ button:hover {
     align-items: center;
 }
 #top-buttons a {
-    margin: 10px 10px;
+    margin: 10px;
    /* Adjust the spacing around buttons */
 }
 #top-buttons button {
@@ -113,7 +166,7 @@ button:hover {
     background-color: rgba(52, 152, 219, 0.8);
 }
 #top-buttons img {
-    width: 20px;
+    width: 15px;
    /* Set the width of the download image */
 }
 /* Adjust the styling of the 'top' section text */
