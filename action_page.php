@@ -40,7 +40,7 @@ try {
     // Content
     $mail->isHTML(true); // Set email format to HTML
 
-    // Retrieve the form fields (consider using $_POST instead of $_GET for form submissions)
+    // Retrieve the form fields using $_POST
     $firstname = isset($_POST['firstname']) ? $_POST['firstname'] : '';
     $lastname  = isset($_POST['lastname']) ? $_POST['lastname'] : '';
     $subject   = isset($_POST['subject']) ? $_POST['subject'] : '';
@@ -57,8 +57,17 @@ try {
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
     $mail->send();
+
+    // Log success to a file
+    $logMessage = "Message sent successfully. Subject: $subject, Recipient: contact@lorenzodortiz.com";
+    error_log($logMessage, 3, 'log/logfile.txt');
+
     echo 'Message has been sent';
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    // Log error to a file
+    $errorMessage = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    error_log($errorMessage, 3, 'path/to/logfile.txt');
+
+    echo $errorMessage;
 }
 ?>
