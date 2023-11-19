@@ -1,22 +1,22 @@
 <?php
-// Include the PHPMailer library
 require 'vendor/autoload.php';
+require 'config.php';
 
-// Other email configuration
-$sender_email = 'contact@lorenzodortiz.com';
-$sender_password = '69Zhe!as*sDrAilA';
+/* You'll need to add this to a config.php file and then add the config.php file to your 
+.gitignore then upload the config.php to your hosting provider and restric permissions to owner for that file.
 
-// SMTP (sending) server details
-$smtp_server = 'smtp.titan.email';
-$smtp_port = 587;
+<?php
+$sender_email = '';
+$sender_password = '';
+$smtp_server = '';
+$smtp_port = ; */
 
-// Retrieve form values from the submission
+
 $user_name = isset($_POST['user_name']) ? $_POST['user_name'] : '';
 $user_email = isset($_POST['user_email']) ? $_POST['user_email'] : '';
 $email_subject = isset($_POST['email_subject']) ? $_POST['email_subject'] : '';
 $email_body = isset($_POST['email_body']) ? $_POST['email_body'] : '';
 
-// Check if required fields are provided
 if (empty($user_name) || empty($user_email) || empty($email_subject) || empty($email_body)) {
     die('Error: Please fill out all required fields.');
 }
@@ -38,7 +38,7 @@ function send_email($user_name, $user_email, $email_subject, $email_body) {
         $mail->SMTPSecure = 'tls';
 
         // Set the email content
-        $mail->setFrom('contact@lorenzodortiz.com', $user_name);
+        $mail->setFrom('$sender_email', $user_name);
         $mail->addAddress($sender_email);
         $mail->Subject = $email_subject;
         $mail->addReplyTo($user_email, $user_name); // Set the "Reply-To" address to the user's email and name
