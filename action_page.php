@@ -41,10 +41,10 @@ try {
     $mail->isHTML(true);  // Set email format to HTML
 
     // Retrieve the form fields
-    $firstname = $_POST['firstname'];
-    $lastname  = $_POST['lastname'];
-    $subject   = $_POST['subject'];
-    $message   = $_POST['message'];
+    $firstname = $_GET['firstname'];
+    $lastname  = $_GET['lastname'];
+    $subject   = $_GET['subject'];
+    $message   = $_GET['message'];
 
     // Set the email subject and body
     $mail->Subject = $subject;
