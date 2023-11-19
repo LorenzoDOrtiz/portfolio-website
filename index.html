@@ -156,27 +156,29 @@
         </main>
 
         <section id="contact" class="content-section">
-            <div class="container">
-                <form method="POST" id="contactForm" action="/action_page.php" >
-                    <label for="fname">First Name</label>
-                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        
-                    <label for="lname">Last Name</label>
-                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        
+                <form method="post" action="send_email.php">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" required>
+                    
+                    <label for="email">email</label>
+                    <input type="email" name="email" id="email" required>
+                    
                     <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" placeholder="Subject..">
-        
+                    <input type="text" name="subject" id="subject" required>
+                    
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
-        
+                    <textarea name="message" id="message" required></textarea>
+                    
+                    <br>
+                    
                     <input type="submit" value="Submit">
+                </form>
+        
         
                 </form>
             </div>
         </section>
         
-
     </div>
 
     <!-- Back to Top Button -->
