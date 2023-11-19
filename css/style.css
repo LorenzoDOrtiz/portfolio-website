@@ -55,8 +55,8 @@ header {
 
 .nav_links li a {
     transition: all 0.3s ease 0s;
-   
-    
+
+
 }
 
 .nav_links li a:hover {
@@ -71,18 +71,13 @@ button {
     border-radius: 0px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-   
+
 }
 
 button:hover {
     background-color: rgba(52, 152, 219, 0.8);
 }
 
-main {
-    margin-top: 60px;
-}
-
-/* Add some padding to the top of the target sections */
 .content-section {
     text-align: center;
     padding: 40px 20px;
@@ -116,18 +111,21 @@ main {
 
 #top-buttons {
     display: flex;
-    flex-direction: column; /* Change to row for horizontal alignment */
+    flex-direction: column;
+    /* Change to row for horizontal alignment */
     justify-content: center;
     align-items: center;
 }
 
 #top-buttons a {
-    margin: 10px 10px; /* Adjust the spacing around buttons */
-   
+    margin: 10px 10px;
+    /* Adjust the spacing around buttons */
+
 }
 
 #top-buttons button {
-    width: 100px; /* Set a fixed width for the buttons */
+    width: 100px;
+    /* Set a fixed width for the buttons */
     padding: 5px;
     background-color: rgba(52, 152, 219, 1);
     border: none;
@@ -141,7 +139,8 @@ main {
 }
 
 #top-buttons img {
-    width: 20px; /* Set the width of the download image */
+    width: 20px;
+    /* Set the width of the download image */
 }
 
 
@@ -157,12 +156,12 @@ main {
 .highlight {
     color: #f39c12;
     /* Highlight color for keywords */
-    }
+}
 
-    button#project{
-        margin: 50px;
-     }
-    
+button#project {
+    margin: 50px;
+}
+
 /* Add styling for the About Me section */
 #about {
     color: #edf0f1;
@@ -182,15 +181,21 @@ main {
 }
 
 
-.skills-section {
-    margin-bottom: 30px;
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow buttons to wrap to the next line if needed */
+    justify-content: center;
+    /* Center the buttons horizontally */
 }
 
 .filter-buttons button {
-    margin-right: 10px;
-    margin-bottom: 10px;
+    margin: 0 5px 10px 5px;
+    /* Adjust margin for spacing between buttons */
     padding: 8px 12px;
-    background-color: #848b95; /* Light grey */
+    background-color: #848b95;
+    /* Light grey */
     color: #edf0f1;
     border: none;
     border-radius: 5px;
@@ -198,29 +203,28 @@ main {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.filter-buttons button.active {
-    background-color: rgba(52, 152, 219, 1);
-    color: #fff;
-}
-
+.filter-buttons button.active,
 .filter-buttons button:hover {
     background-color: rgba(52, 152, 219, 0.8);
     color: #fff;
 }
 
 .reset-button {
-    margin-bottom: 10px;
+    margin: 0 5px 10px 5px;
+    /* Adjust margin for spacing between buttons */
     padding: 8px 12px;
-    background-color: #848b95; /* Light grey */
+    background-color: rgb(196, 11, 11);
+    /* Light grey */
     color: #edf0f1;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
+    border: 3px solid darkred;
 }
 
 .reset-button:hover {
-    background-color: rgba(52, 152, 219, 0.8);
+    background-color: rgba(219, 52, 52, 0.8);
     color: #fff;
 }
 
@@ -230,32 +234,69 @@ main {
     /* Adjust the padding as needed */
     color: #edf0f1;
     text-align: center;
-}
 
-
-.project {
+    /* Apply flex properties to center the projects */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Add styling for the Projects section */
+#projects {
+    padding: 40px 20px;
+    /* Adjust the padding as needed */
+    color: #edf0f1;
+    text-align: center;
+
+    /* Apply flex properties to center the projects */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Add styling for the Projects section */
+#projects {
+    padding: 40px 20px;
+    /* Adjust the padding as needed */
+    color: #edf0f1;
+    text-align: center;
+
+    /* Apply flex properties to center the projects */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project {
+    margin: 20px 0; /* Add margin between projects */
+    max-width: 800px; /* Adjust the maximum width as needed */
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.5s ease; /* Add transition for smooth animation */
+}
+
+.project-odd {
+    flex-direction: row-reverse; /* Reverse the order of project-odd */
+}
+
 .project-details {
     display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-    max-width: 800px;
-    /* Adjust the maximum width as needed */
+    flex-direction: column-reverse; /* Adjust the flex direction to place project info below photo */
+    max-width: 400px; /* Adjust the maximum width of project photos */
 }
 
-.project-photo img {
-    max-width: 400px;
-    /* Adjust the maximum width of project photos */
-}
+/* ... (rest of the CSS remains the same) */
+
 
 .project-info {
-    flex: 1;
     text-align: left;
-    padding: 0 20px;
+    padding: 20px; /* Add padding to project info */
+    flex: 1;
+    box-sizing: border-box;
 }
 
 .tags {
@@ -271,13 +312,23 @@ main {
     margin-right: 10px;
     padding: 10px 15px;
     background-color: rgba(52, 152, 219, 1);
-   
     border-radius: 5px;
 }
 
 .project-buttons a:hover {
     background-color: rgba(52, 152, 219, 0.8);
 }
+
+.project-photo img {
+    max-width: 400px;
+    /* Adjust the maximum width of project photos */
+    width: 100%; /* Ensure the image takes up the full width of its container */
+    border-radius: 5px;
+    margin-right: 20px; /* Add margin to separate the image from project info */
+}
+
+
+
 
 
 
@@ -313,7 +364,8 @@ section#contact {
 }
 
 section#contact form {
-    max-width: 100%; /* Adjust the maximum width as needed */
+    max-width: 100%;
+    /* Adjust the maximum width as needed */
     width: 600px;
 }
 
@@ -331,11 +383,11 @@ section#contact form textarea {
 
 
 section#contact form textarea {
-    
+
     width: 600px;
     resize: vertical;
 
-    
+
 }
 
 section#contact form input[type="submit"] {
@@ -345,7 +397,7 @@ section#contact form input[type="submit"] {
     cursor: pointer;
     padding: 9px 25px;
     transition: all 0.3s ease 0s;
-;
+    ;
 }
 
 section#contact form input[type="submit"]:hover {
@@ -423,7 +475,7 @@ footer {
         flex-direction: column;
         text-align: center;
         max-width: 100%;
-        
+
     }
 
     header {
@@ -487,7 +539,7 @@ footer {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    section#contact form textarea{ 
+    section#contact form textarea {
 
         width: 100%;
         resize: vertical;
@@ -498,14 +550,13 @@ footer {
         text-align: left;
     }
 
-    #top-buttons button{
-    align-items: center;
+    #top-buttons button {
+        align-items: center;
+
+    }
+
+
+
+
 
 }
-
-
-   
-
- 
-}
-

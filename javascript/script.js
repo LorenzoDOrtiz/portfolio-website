@@ -1,10 +1,14 @@
+// Declare allTags in the global scope
+let allTags = [];
+
 document.addEventListener("DOMContentLoaded", function () {
     smoothScrolling();
     backToTopButton();
     toggleMenuIcon();
-    filterProjects();
-    setTopElementMargin();
+    extractTags();
+    createFilterButtons();
 });
+
 
 function smoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -61,57 +65,79 @@ function toggleMenuIcon() {
     });
 }
 
-function filterProjects() {
-    const projects = document.querySelectorAll(".project");
-    const skillsSection = document.getElementById("skills-section");
-    const filterButtonsContainer = document.getElementById("filter-buttons");
-    const resetButton = document.getElementById("reset-button");
+function extractTags() {
+    const projects = document.querySelectorAll('.project');
+    allTags = [];
 
-    // Extract unique skills from projects
-    const skills = [...new Set(Array.from(projects).flatMap((project) => project.dataset.skills.split(" ")))];
+    projects.forEach(project => {
+        const tagsString = project.querySelector('.tags').innerText;
+        const tags = tagsString.split(', ');
 
-    // Dynamically create filter buttons
-    skills.forEach((skill) => {
-        const button = document.createElement("button");
-        button.textContent = skill;
-        button.addEventListener("click", () => filterProjectsBySkill(skill));
+        tags.forEach(tag => {
+            if (!allTags.includes(tag)) {
+                allTags.push(tag);
+            }
+        });
+    });
+
+    console.log(allTags);
+}
+
+function createFilterButtons() {
+    const filterButtonsContainer = document.getElementById('filter-buttons');
+
+    allTags.forEach(tag => {
+        const button = document.createElement('button');
+        button.innerText = tag;
+        button.id = tag; // Set the id to tag name for easier reference
+        button.addEventListener('click', function () {
+            toggleFilter(tag, button);
+        });
+
         filterButtonsContainer.appendChild(button);
     });
 
-    // Add event listener to the reset button
-    resetButton.addEventListener("click", () => resetFilters());
+    // Add event listener for the reset button
+    const resetButton = document.getElementById('reset-button');
+    resetButton.addEventListener('click', function () {
+        resetFilters();
+    });
+}
 
-    function filterProjectsBySkill(skill) {
-        projects.forEach((project) => {
-            const projectSkills = project.dataset.skills.split(" ");
-            const isSkillPresent = projectSkills.includes(skill);
+function toggleFilter(tag) {
+    const projects = document.querySelectorAll('.project');
 
-            if (isSkillPresent) {
-                project.style.display = "block";
-            } else {
-                project.style.display = "none";
-            }
+    // Toggle active class on the button
+    const button = document.getElementById(tag);
+    button.classList.toggle('active');
+
+    // Filter projects based on selected tags
+    projects.forEach(project => {
+        const projectTagsString = project.querySelector('.tags').innerText;
+        const projectTags = projectTagsString.split(', ');
+
+        // Check if at least one selected tag is present in the project
+        const showProject = Array.from(document.querySelectorAll('.filter-buttons button.active')).some(activeButton => {
+            return projectTags.includes(activeButton.innerText);
         });
 
-        highlightActiveButton(skill);
-    }
-
-    function resetFilters() {
-        projects.forEach((project) => (project.style.display = "block"));
-        Array.from(filterButtonsContainer.children).forEach((button) => button.classList.remove("active"));
-    }
-
-    function highlightActiveButton(skill) {
-        Array.from(filterButtonsContainer.children).forEach((button) => button.classList.remove("active"));
-        const activeButton = Array.from(filterButtonsContainer.children).find((button) => button.textContent === skill);
-        activeButton.classList.add("active");
-    }
+        // Toggle the project visibility
+        project.style.display = showProject ? 'block' : 'none';
+    });
 }
 
-function setTopElementMargin() {
-    const header = document.querySelector('header');
-    const topElement = document.getElementById('top');
-    const headerHeight = header.offsetHeight;
+function resetFilters() {
+    const buttons = document.querySelectorAll('.filter-buttons button');
 
-    topElement.style.marginTop = `-${headerHeight}px`;
+    // Remove 'active' class from all buttons
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    // Show all projects
+    const projects = document.querySelectorAll('.project');
+    projects.forEach(project => {
+        project.style.display = 'flex'; // Set display to 'flex' to maintain the flexbox layout
+    });
 }
+
