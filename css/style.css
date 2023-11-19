@@ -180,10 +180,9 @@ button#project {
     /* Highlight color for strong tags */
 }
 
-
-
 .filter-buttons {
     display: flex;
+    margin: 10px;
     flex-wrap: wrap;
     /* Allow buttons to wrap to the next line if needed */
     justify-content: center;
@@ -191,16 +190,16 @@ button#project {
 }
 
 .filter-buttons button {
-    margin: 0 5px 10px 5px;
     /* Adjust margin for spacing between buttons */
     padding: 8px 12px;
-    background-color: #848b95;
+    background-color: #464a4e;
     /* Light grey */
     color: #edf0f1;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
+    border: 3px solid #1e1e1e;
+
 }
 
 .filter-buttons button.active,
@@ -210,21 +209,21 @@ button#project {
 }
 
 .reset-button {
-    margin: 0 5px 10px 5px;
+   
     /* Adjust margin for spacing between buttons */
-    padding: 8px 12px;
-    background-color: rgb(196, 11, 11);
+    padding: 4px 10px;
+   
     /* Light grey */
     color: #edf0f1;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     border: 3px solid darkred;
+    background-color: rgba(196, 11, 11, 0.8);
 }
 
 .reset-button:hover {
-    background-color: rgba(219, 52, 52, 0.8);
+    background-color: rgb(252, 0, 0);
     color: #fff;
 }
 
