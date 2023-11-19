@@ -5,28 +5,22 @@
     color: #cccccc;
     font-family: "monospace", "Courier New", Lucida Console;
     text-decoration: none;
-
 }
-
 h2 {
-    color: #ffffff
+    color: #ffffff 
 }
-
 .container {
     max-width: 100%;
     margin: 0 auto;
 }
-
 body {
     flex-direction: column;
 }
-
-
 header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 15px 2%;
+    padding: 0 2%;
     border-bottom: 3px solid #1d1e22;
     position: fixed;
     top: 0%;
@@ -36,33 +30,26 @@ header {
     background-color: #1a1a1a;
     color: #ffffff;
 }
-
-.logo {
-    cursor: pointer;
-    width: 150px;
+.headerlogo {
+    cursor: none;
+    height: 50px;
+    padding: 10px;
     margin-right: auto;
 }
-
 .nav_links {
     list-style: none;
 }
-
 /* Add styling for the navigation links */
 .nav_links li {
     display: inline-block;
     padding: 0px 20px;
 }
-
 .nav_links li a {
     transition: all 0.3s ease 0s;
-
-
 }
-
 .nav_links li a:hover {
     color: #0088a9;
 }
-
 button {
     margin-left: 20px;
     padding: 9px 25px;
@@ -71,30 +58,23 @@ button {
     border-radius: 0px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-
 }
-
 button:hover {
     background-color: rgba(52, 152, 219, 0.8);
 }
-
 .content-section {
     text-align: center;
-    padding: 40px 20px;
-
+    padding: 20px;
 }
-
 /* Add the alternating background colors */
 .content-section:nth-child(odd) {
     background-color: #222222;
-    /* Lighter color for odd sections */
+   /* Lighter color for odd sections */
 }
-
 .content-section:nth-child(even) {
     background-color: #1e1e1e;
-    /* Darker color for even sections */
+   /* Darker color for even sections */
 }
-
 /* Adjust the styling of the 'top' section to accommodate the padding */
 #top {
     background-image: url("/assets/jpeg/42.jpg");
@@ -108,24 +88,20 @@ button:hover {
     align-items: center;
     text-align: center;
 }
-
 #top-buttons {
     display: flex;
     flex-direction: column;
-    /* Change to row for horizontal alignment */
+   /* Change to row for horizontal alignment */
     justify-content: center;
     align-items: center;
 }
-
 #top-buttons a {
     margin: 10px 10px;
-    /* Adjust the spacing around buttons */
-
+   /* Adjust the spacing around buttons */
 }
-
 #top-buttons button {
     width: 100px;
-    /* Set a fixed width for the buttons */
+   /* Set a fixed width for the buttons */
     padding: 5px;
     background-color: rgba(52, 152, 219, 1);
     border: none;
@@ -133,87 +109,70 @@ button:hover {
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
-
 #top-buttons button:hover {
     background-color: rgba(52, 152, 219, 0.8);
 }
-
 #top-buttons img {
     width: 20px;
-    /* Set the width of the download image */
+   /* Set the width of the download image */
 }
-
-
 /* Adjust the styling of the 'top' section text */
-
-
 #top p {
     font-size: 1.5em;
     margin-top: 10px;
-    /* Add some margin for spacing */
+   /* Add some margin for spacing */
 }
-
 .highlight {
     color: #f39c12;
-    /* Highlight color for keywords */
+   /* Highlight color for keywords */
 }
-
 button#project {
     margin: 50px;
 }
-
 /* Add styling for the About Me section */
 #about {
     color: #edf0f1;
     text-align: center;
 }
-
-
 #about p {
     font-size: 1.2em;
-    margin-bottom: 15px;
     padding: 1% 30%;
 }
-
 #about strong {
     color: #0088a9;
-    /* Highlight color for strong tags */
+   /* Highlight color for strong tags */
 }
-
 .filter-buttons {
     display: flex;
     margin: 10px;
     flex-wrap: wrap;
-    /* Allow buttons to wrap to the next line if needed */
     justify-content: center;
-    /* Center the buttons horizontally */
+    text-align: center;
+   /* Add a border around the buttons */
+    border: 2px solid #464a4e;
+    border-radius: 5px;
+    padding: 10px;
+   /* Adjust padding as needed */
 }
-
 .filter-buttons button {
-    /* Adjust margin for spacing between buttons */
+   /* Adjust margin for spacing between buttons */
     padding: 8px 12px;
     background-color: #464a4e;
-    /* Light grey */
+   /* Light grey */
     color: #edf0f1;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     border: 3px solid #1e1e1e;
-
 }
-
-.filter-buttons button.active,
-.filter-buttons button:hover {
+.filter-buttons button.active, .filter-buttons button:hover {
     background-color: rgba(52, 152, 219, 0.8);
     color: #fff;
 }
-
 .reset-button {
-   
-    /* Adjust margin for spacing between buttons */
+   /* Adjust margin for spacing between buttons */
     padding: 4px 10px;
-   
-    /* Light grey */
+   /* Light grey */
     color: #edf0f1;
     border-radius: 5px;
     cursor: pointer;
@@ -221,138 +180,110 @@ button#project {
     border: 3px solid darkred;
     background-color: rgba(196, 11, 11, 0.8);
 }
-
 .reset-button:hover {
     background-color: rgb(252, 0, 0);
     color: #fff;
 }
-
-/* Add styling for the Projects section */
-#projects {
-    padding: 40px 20px;
-    /* Adjust the padding as needed */
-    color: #edf0f1;
-    text-align: center;
-
-    /* Apply flex properties to center the projects */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Add styling for the Projects section */
-#projects {
-    padding: 40px 20px;
-    /* Adjust the padding as needed */
-    color: #edf0f1;
-    text-align: center;
-
-    /* Apply flex properties to center the projects */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Add styling for the Projects section */
-#projects {
-    padding: 40px 20px;
-    /* Adjust the padding as needed */
-    color: #edf0f1;
-    text-align: center;
-
-    /* Apply flex properties to center the projects */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.project {
-    margin: 20px 0; /* Add margin between projects */
-    max-width: 800px; /* Adjust the maximum width as needed */
-    width: 100%;
-    box-sizing: border-box;
+.project-right {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.5s ease; /* Add transition for smooth animation */
+    margin-top: 30px;
 }
-
-.project-odd {
-    flex-direction: row-reverse; /* Reverse the order of project-odd */
+.project-right-info {
+    text-align: center;
+    max-width: 600px;
 }
-
-.project-details {
+/* Add this CSS to center .project-right-details */
+.project-right-details {
     display: flex;
-    flex-direction: column-reverse; /* Adjust the flex direction to place project info below photo */
-    max-width: 400px; /* Adjust the maximum width of project photos */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+   /* Center horizontally */
+    width: 70%;
+   /* Adjust the width as needed */
+    padding: 0 20px;
+   /* Add minimum left and right padding */
 }
-
-/* ... (rest of the CSS remains the same) */
-
-
-.project-info {
-    text-align: left;
-    padding: 20px; /* Add padding to project info */
-    flex: 1;
-    box-sizing: border-box;
-}
-
-.tags {
+.project-right-tags {
     margin-top: 10px;
 }
-
-.project-buttons {
-    margin-top: 10px;
+.project-right-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
-
-.project-buttons a {
-    display: inline-block;
-    margin-right: 10px;
-    padding: 10px 15px;
+.project-right-buttons a {
+    margin: 10px;
+    padding: 5px 10px;
     background-color: rgba(52, 152, 219, 1);
     border-radius: 5px;
 }
-
-.project-buttons a:hover {
+.project-right-buttons a:hover {
     background-color: rgba(52, 152, 219, 0.8);
 }
-
-.project-photo img {
-    max-width: 400px;
-    /* Adjust the maximum width of project photos */
-    width: 100%; /* Ensure the image takes up the full width of its container */
+.project-right-photo {
+    margin-left: auto;
+   /* Move the image to the right edge */
+}
+.project-right-photo img {
+    width: 600px;
+}
+.project-left {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 30px;
+}
+.project-left-info {
+    text-align: center;
+    max-width: 600px;
+}
+/* Add this CSS to center .project-right-details */
+.project-left-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+   /* Center horizontally */
+    width: 70%;
+   /* Adjust the width as needed */
+    padding: 0 20px;
+   /* Add minimum left and right padding */
+}
+.project-left-tags {
+    margin-top: 10px;
+}
+.project-left-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.project-left-buttons a {
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: rgba(52, 152, 219, 1);
     border-radius: 5px;
-    margin-right: 20px; /* Add margin to separate the image from project info */
 }
-
-
-
-
-
-
-
-#certifications {
-    padding: 80px 20px;
+.project-left-buttons a:hover {
+    background-color: rgba(52, 152, 219, 0.8);
 }
-
-.certification {
-    margin-bottom: 20px;
+.project-left-photo {
+    margin-left: auto;
+   /* Move the image to the right edge */
 }
-
+.project-left-photo img {
+    width: 600px;
+}
 .certification img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
+    width: 600px;
 }
-
-.certification p {
-    margin-top: 10px;
-    font-size: 1.2em;
-}
-
-
-
 /* Add styling for the Contact section */
 section#contact {
     display: flex;
@@ -361,34 +292,22 @@ section#contact {
     align-items: center;
     padding-top: 20px;
 }
-
 section#contact form {
     max-width: 100%;
-    /* Adjust the maximum width as needed */
+   /* Adjust the maximum width as needed */
     width: 600px;
 }
-
-section#contact form label,
-section#contact form input,
-section#contact form textarea {
+section#contact form label, section#contact form input, section#contact form textarea {
     display: flex;
     margin-bottom: 15px;
 }
-
-section#contact form input,
-section#contact form textarea {
+section#contact form input, section#contact form textarea {
     color: black;
 }
-
-
 section#contact form textarea {
-
     width: 600px;
     resize: vertical;
-
-
 }
-
 section#contact form input[type="submit"] {
     background-color: rgba(52, 152, 219, 1);
     border: none;
@@ -398,11 +317,9 @@ section#contact form input[type="submit"] {
     transition: all 0.3s ease 0s;
     ;
 }
-
 section#contact form input[type="submit"]:hover {
     background-color: rgba(52, 152, 219, 0.8);
 }
-
 #backToTopBtn {
     position: fixed;
     bottom: 40px;
@@ -413,149 +330,184 @@ section#contact form input[type="submit"]:hover {
     border-radius: 0px;
     cursor: pointer;
     opacity: 0;
-    /* Start with 0 opacity */
+   /* Start with 0 opacity */
     transition: opacity .8s ease;
-    /* Add a transition for the opacity property */
+   /* Add a transition for the opacity property */
 }
-
 #backToTopBtn.show {
     opacity: 1;
-    /* Show the button by setting opacity to 1 */
+   /* Show the button by setting opacity to 1 */
 }
-
 #backToTopBtn:hover {
     background-color: rgba(52, 152, 219, 0.8);
 }
-
 footer {
     background-color: #1a1a1a;
     padding: 10px 30px;
     border-top: 3px solid #1d1e22;
-
 }
-
-
 .footer-content {
     text-align: center;
 }
-
 .copyright {
     font-size: 14px;
 }
-
 .copyright a {
     font-size: 14px;
     text-decoration: underline;
 }
-
-
-#certifications {
-    padding: 80px 20px;
-}
-
-.certification {
-    margin-bottom: 20px;
-}
-
 .certification img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
 }
-
 .certification p {
     margin-top: 10px;
     font-size: 1.2em;
 }
-
-@media only screen and (max-width: 768px) {
-    * {
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
-        max-width: 100%;
-
-    }
-
+/* Existing styles remain unchanged */
+@media only screen and (max-width: 1000px) {
+   /* Adjustments for smaller screens */
     header {
         justify-content: space-between;
-        padding: 15px 5%;
-    }
-
-    .logo {
+        padding: 0 2%;
+   }
+    .headerlogo {
         width: 150px;
-        margin-right: 0;
-    }
-
+        margin: 0 auto;
+       /* Center the logo horizontally */
+   }
     .nav_links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #24252a;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        z-index: 99;
-    }
-
-    .nav_links.show {
         display: flex;
-    }
-
+        flex-direction: column;
+        width: 70%;
+        background-color: #24252a;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        opacity: 0;
+       /* Initially set to 0 */
+        transform: translateY(100%);
+       /* Initially off the screen */
+        transition: opacity 0.8s ease, transform 0.8s ease;
+       /* Add transition for smooth effect */
+   }
+    .nav_links.show {
+        opacity: 1;
+       /* Fade in by setting opacity to 1 */
+        transform: translateY(0);
+   }
     .nav_links li {
         padding: 15px;
-    }
-
+   }
     .cta {
         display: none;
-    }
-
+   }
+    #backToTopBtn {
+        display: none;
+   }
     .menu-icon {
         cursor: pointer;
         display: block;
-        margin-left: auto;
+        position: fixed;
+       /* Set the position to fixed for absolute positioning on the screen */
+        bottom: 20px;
+       /* Adjust the distance from the bottom */
+        right: 20px;
+       /* Adjust the distance from the right */
         width: 30px;
         margin-top: 5px;
-    }
-
+   }
     .menu-icon div {
         width: 30px;
         height: 3px;
-        background-color: #edf0f1;
+        background-color: grey;
         margin: 6px 0;
-        transition: 0.4s;
-    }
-
+        transition: 1s;
+   }
     .menu-icon.active div:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
+   }
     .menu-icon.active div:nth-child(2) {
         opacity: 0;
-    }
-
+   }
     .menu-icon.active div:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
-    }
-
+   }
+    #about p {
+        font-size: 1em;
+        padding: 0;
+   }
     section#contact form textarea {
-
         width: 100%;
         resize: vertical;
-
-    }
-
+   }
     section#contact form label {
         text-align: left;
-    }
-
+   }
     #top-buttons button {
         align-items: center;
-
-    }
-
-
-
-
-
+   }
+    .content-section {
+        padding: 50px;
+       /* Adjusted padding for smaller screens */
+   }
+    #top {
+        height: 100vh;
+       /* Allow the height to adjust based on content */
+   }
+    #top-buttons a {
+        margin: 10px;
+       /* Adjusted spacing around buttons */
+   }
+    #top-buttons button {
+        width: auto;
+       /* Allow the width to adjust based on content */
+   }
+    #top-buttons img {
+        width: 15px;
+       /* Adjusted size of the download image */
+   }
+    .project-left, .project-right {
+        flex-direction: column;
+       /* Adjusted for vertical stacking on smaller screens */
+   }
+    .project-left-photo, .project-right-photo {
+        margin-left: 0;
+       /* Reset margin for image alignment */
+   }
+    .project-left-photo img, .project-right-photo img {
+        width: 100%;
+       /* Adjusted image width for responsiveness */
+   }
+}
+/* Additional styles for larger screens */
+@media only screen and (min-width: 1450px) {
+    #projects {
+        padding-left: 400px;
+       /* Adjust the left padding for larger screens as needed */
+        padding-right: 400px;
+       /* Adjust the right padding for larger screens as needed */
+   }
+    #projects .project-right-details {
+        width: 100%;
+       /* Adjust the width as needed */
+        padding-right: 50px;
+       /* Add more left and right padding */
+        padding-left: 50px;
+       /* Add more left and right padding */
+   }
+}
+@media only screen and (min-width: 2200px) {
+    #projects {
+        padding-left: 600px;
+       /* Adjust the left padding for larger screens as needed */
+        padding-right: 600px;
+       /* Adjust the right padding for larger screens as needed */
+   }
+    #projects .project-right-details {
+        padding-left: 100px;
+       /* Add more left padding for screens wider than 2200px */
+   }
 }

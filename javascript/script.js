@@ -1,143 +1,162 @@
 // Declare allTags in the global scope
 let allTags = [];
 
-document.addEventListener("DOMContentLoaded", function () {
-    smoothScrolling();
-    backToTopButton();
-    toggleMenuIcon();
-    extractTags();
-    createFilterButtons();
+document.addEventListener('DOMContentLoaded', () => {
+  smoothScrolling();
+  backToTopButton();
+  toggleMenuIcon();
+  extractTags();
+  createFilterButtons();
+
+  // Add the code for button resizing
+  const buttons = document.querySelectorAll('.filter-buttons button');
+  let maxWidth = 0;
+
+  buttons.forEach((button) => {
+    if (button.offsetWidth > maxWidth) {
+      maxWidth = button.offsetWidth;
+    }
+  });
+
+  buttons.forEach((button) => {
+    button.style.width = `${maxWidth}px`;
+  });
 });
 
-
 function smoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetElement = document.querySelector(this.getAttribute('href'));
+
+      if (targetElement) {
+        const offset = 60; // Adjust the offset based on your fixed header height
+        const targetPosition = targetElement.offsetTop - offset;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
         });
+      }
     });
+  });
 }
 
 function backToTopButton() {
-    const backToTopButton = document.getElementById("backToTopBtn");
+  const backToTopButton = document.getElementById('backToTopBtn');
 
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 200) {
-            backToTopButton.classList.add("show");
-        } else {
-            backToTopButton.classList.remove("show");
-        }
-    });
-
-    backToTopButton.addEventListener("click", function () {
-        scrollToTop(1000);
-    });
-
-    function scrollToTop(duration) {
-        var start = window.pageYOffset;
-        var startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-
-        function scroll() {
-            var now = 'now' in window.performance ? performance.now() : new Date().getTime();
-            var time = Math.min(1, (now - startTime) / duration);
-
-            window.scroll(0, Math.ceil((1 - time) * start + time * 0));
-
-            if (time < 1) {
-                requestAnimationFrame(scroll);
-            }
-        }
-
-        scroll();
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      backToTopButton.classList.add('show');
+    } else {
+      backToTopButton.classList.remove('show');
     }
+  });
+
+  backToTopButton.addEventListener('click', () => {
+    scrollToTop(1000);
+  });
+
+  function scrollToTop(duration) {
+    const start = window.pageYOffset;
+    const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+    function scroll() {
+      const now = 'now' in window.performance ? performance.now() : new Date().getTime();
+      const time = Math.min(1, (now - startTime) / duration);
+
+      window.scroll(0, Math.ceil((1 - time) * start + time * 0));
+
+      if (time < 1) {
+        requestAnimationFrame(scroll);
+      }
+    }
+
+    scroll();
+  }
 }
 
 function toggleMenuIcon() {
-    const menuIcon = document.querySelector('.menu-icon');
-    const navLinks = document.querySelector('.nav_links');
+  const menuIcon = document.querySelector('.menu-icon');
+  const navLinks = document.querySelector('.nav_links');
 
-    menuIcon.addEventListener('click', function () {
-        navLinks.classList.toggle('show');
-        menuIcon.classList.toggle('active');
-    });
+  menuIcon.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    menuIcon.classList.toggle('active');
+  });
 }
 
 function extractTags() {
-    const projects = document.querySelectorAll('.project');
-    allTags = [];
+  const projects = document.querySelectorAll('.project-left, .project-right');
+  allTags = [];
 
-    projects.forEach(project => {
-        const tagsString = project.querySelector('.tags').innerText;
-        const tags = tagsString.split(', ');
+  projects.forEach((project) => {
+    const tagsString = project.querySelector('.project-left-tags, .project-right-tags').innerText;
+    const tags = tagsString.split(', ');
 
-        tags.forEach(tag => {
-            if (!allTags.includes(tag)) {
-                allTags.push(tag);
-            }
-        });
+    tags.forEach((tag) => {
+      if (!allTags.includes(tag)) {
+        allTags.push(tag);
+      }
     });
+  });
 
-    console.log(allTags);
+  console.log(allTags);
 }
 
 function createFilterButtons() {
-    const filterButtonsContainer = document.getElementById('filter-buttons');
+  const filterButtonsContainer = document.getElementById('filter-buttons');
 
-    allTags.forEach(tag => {
-        const button = document.createElement('button');
-        button.innerText = tag;
-        button.id = tag; // Set the id to tag name for easier reference
-        button.addEventListener('click', function () {
-            toggleFilter(tag, button);
-        });
-
-        filterButtonsContainer.appendChild(button);
+  allTags.forEach((tag) => {
+    const button = document.createElement('button');
+    button.innerText = tag;
+    button.id = tag; // Set the id to tag name for easier reference
+    button.addEventListener('click', () => {
+      toggleFilter(tag, button);
     });
 
-    // Add event listener for the reset button
-    const resetButton = document.getElementById('reset-button');
-    resetButton.addEventListener('click', function () {
-        resetFilters();
-    });
+    filterButtonsContainer.appendChild(button);
+  });
+
+  // Add event listener for the reset button
+  const resetButton = document.getElementById('reset-button');
+  resetButton.addEventListener('click', () => {
+    resetFilters();
+  });
 }
 
 function toggleFilter(tag) {
-    const projects = document.querySelectorAll('.project');
+  const projects = document.querySelectorAll('.project-left, .project-right');
 
-    // Toggle active class on the button
-    const button = document.getElementById(tag);
-    button.classList.toggle('active');
+  // Toggle active class on the button
+  const button = document.getElementById(tag);
+  button.classList.toggle('active');
 
-    // Filter projects based on selected tags
-    projects.forEach(project => {
-        const projectTagsString = project.querySelector('.tags').innerText;
-        const projectTags = projectTagsString.split(', ');
+  // Filter projects based on selected tags
+  projects.forEach((project) => {
+    const projectTagsString = project.querySelector('.project-left-tags, .project-right-tags').innerText;
+    const projectTags = projectTagsString.split(', ');
 
-        // Check if at least one selected tag is present in the project
-        const showProject = Array.from(document.querySelectorAll('.filter-buttons button.active')).some(activeButton => {
-            return projectTags.includes(activeButton.innerText);
-        });
+    // Check if at least one selected tag is present in the project
+    const showProject = Array.from(document.querySelectorAll('.filter-buttons button.active')).some((activeButton) => projectTags.includes(activeButton.innerText));
 
-        // Toggle the project visibility
-        project.style.display = showProject ? 'block' : 'none';
-    });
+    // Toggle the project visibility
+    project.style.display = showProject ? 'block' : 'none';
+  });
 }
 
 function resetFilters() {
-    const buttons = document.querySelectorAll('.filter-buttons button');
+  const buttons = document.querySelectorAll('.filter-buttons button');
 
-    // Remove 'active' class from all buttons
-    buttons.forEach(button => {
-        button.classList.remove('active');
-    });
+  // Remove 'active' class from all buttons
+  buttons.forEach((button) => {
+    button.classList.remove('active');
+  });
 
-    // Show all projects
-    const projects = document.querySelectorAll('.project');
-    projects.forEach(project => {
-        project.style.display = 'flex'; // Set display to 'flex' to maintain the flexbox layout
-    });
+  // Show all projects
+  const projects = document.querySelectorAll('.project-left, .project-right');
+  projects.forEach((project) => {
+    project.style.display = 'flex'; // Set display to 'flex' to maintain the flexbox layout
+  });
 }
-

@@ -1,213 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Software Engineering & Ethical Hacking">
-    <title>Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="resources/images/logos/logo.png">
-    <link href="css/style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Software Engineering &amp; Ethical Hacking">
+  <title>Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="resources/images/logos/logo.png">
+  <link href="css/style.css" rel="stylesheet">
 </head>
-
 <body class="container">
-    <div class="wrapper">
-        <header>
-            <!-- Add this inside your <header> element, before the <img class="logo" ...> -->
-            <div class="menu-icon">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-
-            <img class="logo" src="resources/images/logos/logowithname.png" alt="logo">
-            <nav>
-                <ul class="nav_links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <!-- Add the Blog link -->
-                    <li><a href="#blog">Blog</a></li>
-                </ul>
-            </nav>
-            <a class="cta" href="#contact"><button>Contact</button></a>
-        </header>
-
-        <main>
-            <section id="top">
-                <div>
-                    <h2>Hey, I'm Lorenzo Ortiz</h2>
-                    <p>Software Engineering & Ethical Hacking Student.</p>
-                    <div id="top-buttons">
-                        <a id=top-project-button class="button" href="#projects"><button
-                                style="margin-top: 10px;">Projects</button></a>
-                        <a id=top-resume-download-button class="button" href="resources/documents/Resume.pdf"
-                            download><button>Resume<br><img src=resources/images/logos/download-solid.svg
-                                    alt="download logo"></button></a>
-                    </div>
-                </div>
-
-
-            </section>
-
-            <section id="about" class="content-section">
-                <h2>About Me</h2>
-                <p>
-                    Hi, I'm <span class="highlight">Lorenzo Ortiz</span>, an <span class="highlight">Emergency Medical
-                        Technician (EMT)</span> currently residing in Yakima, WA. I play a crucial role in providing
-                    timely and quality care to patients in various emergency situations. My experience in <span
-                        class="highlight">electronic medical records</span> enhances the efficiency and accuracy of
-                    emergency response and documentation.
-                </p>
-                <p>
-                    In addition to my work in the medical field, I'm a <span class="highlight">Software Engineering
-                        student</span> at Western Governors University, driven by a passion for <span
-                        class="highlight">problem-solving</span> and technology. With a strong background in military
-                    medicine, having served as a <span class="highlight">combat medic</span> in the US Army for four
-                    years, I've received multiple honors for <span class="highlight">leadership</span>, <span
-                        class="highlight">medical preparedness</span>, and <span class="highlight">coordination
-                        skills</span>
-                    during deployments to Korea and assignments at Okubo Medical Clinic.
-                </p>
-                <p>
-                    I am eager to apply my diverse experience and technical skills to the software engineering field. I
-                    value <span class="highlight">teamwork</span>, <span class="highlight">learning</span>, and <span
-                        class="highlight">innovation</span>, and I am always open to new <span
-                        class="highlight">challenges</span> and <span class="highlight">opportunities</span>. Currently
-                    pursuing a <span class="highlight">Bachelor of Science in Software Engineering</span> at Western
-                    Governors University, I am authorized to work in the US for any employer.
-                </p>
-                <p>
-                    <strong>Learning Ethical Hacking:</strong> As part of my ongoing journey, I am also delving into the
-                    realm of <span class="highlight">ethical hacking</span>, exploring the intersection of <span
-                        class="highlight">technology</span>, <span class="highlight">security</span>, and <span
-                        class="highlight">problem-solving</span>.
-                </p>
-            </section>
-
-
-
-
-            <section id="projects" class="content-section">
-                <h2>Projects</h2>
-            
-                <!-- Skills Section -->
-                <div id="skills-section" class="skills-section">
-                    <h3>Skills</h3>
-                    <div id="filter-buttons" class="filter-buttons"></div>
-                    <button id="reset-button" class="reset-button">Reset</button>
-                </div>
-            
-                <div class="project project-odd">
-                    <!-- Project 1 -->
-                    <div class="project-details">
-                        <div class="project-photo">
-                            <!-- Placeholder for project photo -->
-                            <img src="assets/jpeg/explorer_QhSlg2mVBe.jpg" alt="Project 1">
-                        </div>
-                        <div class="project-info">
-                            <!-- Placeholder for project description -->
-                            <p>Project 1 description goes here...</p>
-                            <!-- Placeholder for project tags -->
-                            <p>Tags:</p>
-                            <div class="tags">Web Development, JavaScript, CSS</div>
-                            <!-- Buttons for GitHub and Live Demo -->
-                            <div class="project-buttons">
-                                <a href="https://github.com" target="_blank">GitHub</a>
-                                <a href="https://demo.com" target="_blank">Live Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End of Project 1 -->
-                </div>
-            
-                <div class="project project-even">
-                    <!-- Project 2 -->
-                    <div class="project-details">
-                        <div class="project-info">
-                            <!-- Placeholder for project description -->
-                            <p>Project 2 description goes here...</p>
-                            <!-- Placeholder for project tags -->
-                            <p>Tags:</p>
-                            <div class="tags">React, Node.js, MongoDB</div>
-                            <!-- Buttons for GitHub and Live Demo -->
-                            <div class="project-buttons">
-                                <a href="https://github.com" target="_blank">GitHub</a>
-                                <a href="https://demo.com" target="_blank">Live Demo</a>
-                            </div>
-                        </div>
-                        <div class="project-photo">
-                            <!-- Placeholder for project photo -->
-                            <img src="assets/jpeg/explorer_QhSlg2mVBe.jpg" alt="Project 2">
-                        </div>
-                    </div>
-                    <!-- End of Project 2 -->
-                </div>
-            </section>
-            
-
-
-            <section id="blog" class="content-section">
-                <h2>Blog</h2>
-                <!-- Add your content for the Blog section here -->
-            </section>
-
-            <!-- Replace the Resume section with the Certifications section -->
-            <section id="certifications" class="content-section">
-                <h2>Certifications</h2>
-                <br>
-                <!-- Add your certifications here -->
-                <div class="certification">
-                    <img src="assets/jpeg/Network+Certificate.jpg" alt="CompTIA Network+" width=800px>
-
-                </div>
-                <div class="certification">
-                    <img src="assets/jpeg/A+Certificate.jpg" alt="CompTIA A+" width=800px>
-
-                </div>
-            </section>
-
-            <section id="contact" class="content-section">
-                <form action="send_email.php" method="post">
-                    <label for="user_name">Your Name:</label>
-                    <input type="text" name="user_name" id="user_name" placeholder="John Doe" required>
-
-                    <label for="user_email">Your Email:</label>
-                    <input type="email" name="user_email" id="user_email" placeholder="John@email.com" required>
-
-                    <label for="email_subject">Subject:</label>
-                    <input type="text" name="email_subject" id="email_subject" placeholder="Interesting in connecting"
-                        required>
-
-                    <label for="email_body">Message:</label>
-                    <textarea name="email_body" id="email_body" rows="15"></textarea>
-
-                    <input type="submit" value="Submit">
-                </form>
-
-    </div>
-    </section>
-    </main>
-
-
-
-    </div>
-
-    <!-- Back to Top Button -->
-    <div id="backToTopBtn">&#8679;</div>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="copyright"> <!-- Please leave this link to give me some credit for my work, thank you!-->
-                    <p>Website Designed by <a href=https://www.linkedin.com/in/lorenzodortiz>Lorenzo Ortiz</a></p>
-                </div>
-            </div>
+  <div class="wrapper">
+    <header>
+      <div class="menu-icon"></div><img class="headerlogo" src="resources/images/logos/logowithname.png" alt="logo">
+      <nav>
+        <ul class="nav_links">
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#certifications">Certifications</a>
+          </li><!-- Add the Blog link -->
+          <li>
+            <a href="#blog">Blog</a>
+          </li>
+        </ul>
+      </nav><a class="cta" href="#contact"><button>Contact</button></a>
+    </header>
+    <main>
+      <section id="top">
+        <div>
+          <h2>Hey, I'm Lorenzo Ortiz</h2>
+          <p>Software Engineering & Ethical Hacking Student.</p>
+          <div id="top-buttons">
+            <a id="top-project-button" class="button" href="#projects"><button style="margin-top: 10px;">Projects</button></a> <a id="top-resume-download-button" class="button" href="resources/documents/Resume.pdf" download=""><button>Resume<br>
+            <img src="resources/images/logos/download-solid.svg" alt="download logo"></button></a>
+          </div>
         </div>
-    </footer>
-
-    <script type="application/javascript" src="javascript/script.js"></script>
-
+      </section>
+      <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <p>Hi, I'm <span class="highlight">Lorenzo Ortiz</span>, an <span class="highlight">Emergency Medical Technician (EMT)</span> currently residing in Yakima, WA. I play a crucial role in providing timely and quality care to patients in various emergency situations. My experience in <span class="highlight">electronic medical records</span> enhances the efficiency and accuracy of emergency response and documentation.</p>
+        <p>In addition to my work in the medical field, I'm a <span class="highlight">Software Engineering student</span> at Western Governors University, driven by a passion for <span class="highlight">problem-solving</span> and technology. With a strong background in military medicine, having served as a <span class="highlight">combat medic</span> in the US Army for four years, I've received multiple honors for <span class="highlight">leadership</span>, <span class="highlight">medical preparedness</span>, and <span class="highlight">coordination skills</span> during deployments to Korea and assignments at Okubo Medical Clinic.</p>
+        <p>I am eager to apply my diverse experience and technical skills to the software engineering field. I value <span class="highlight">teamwork</span>, <span class="highlight">learning</span>, and <span class="highlight">innovation</span>, and I am always open to new <span class="highlight">challenges</span> and <span class="highlight">opportunities</span>. Currently pursuing a <span class="highlight">Bachelor of Science in Software Engineering</span> at Western Governors University, I am authorized to work in the US for any employer.</p>
+        <p><strong>Learning Ethical Hacking:</strong> As part of my ongoing journey, I am also delving into the realm of <span class="highlight">ethical hacking</span>, exploring the intersection of <span class="highlight">technology</span>, <span class="highlight">security</span>, and <span class="highlight">problem-solving</span>.</p>
+      </section>
+      <section id="projects" class="content-section">
+        <h2>Projects</h2><br>
+        <!-- Skills Section -->
+        <div id="skills-section" class="skills-section">
+          <h3>Skills</h3>
+          <div id="filter-buttons" class="filter-buttons"></div><button id="reset-button" class="reset-button">Reset</button>
+        </div>
+        <div class="project-right">
+          <!-- Project 1 -->
+          <div class="project-right-details">
+            <div class="project-right-info">
+              <!-- Placeholder for project description -->
+              <h2>Project Name</h2><br>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio beatae nemo, optio placeat error unde minima atque soluta id odio iste animi iusto. Asperiores molestias vel in, cum soluta ex?</p><br>
+              <!-- Placeholder for project tags -->
+               <span class="highlight">Tags:</span>
+              <div class="project-right-tags">
+                Java, JavaScript, CSS
+              </div><!-- Buttons for GitHub and Live Demo -->
+              <div class="project-right-buttons">
+                <a href="https://github.com" target="_blank">GitHub</a> <a href="https://demo.com" target="_blank">Live Demo</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-right-photo"><!-- Placeholder for project photo -->
+          <img src="assets/jpeg/explorer_QhSlg2mVBe.jpg" alt="Project 1"></div>
+        </div>
+        <div class="project-left">
+          <!-- Project 1 -->
+          <div class="project-left-details">
+            <div class="project-left-info">
+              <!-- Placeholder for project description -->
+              <h2>Project Name</h2><br>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio beatae nemo, optio placeat error unde minima atque soluta id odio iste animi iusto. Asperiores molestias vel in, cum soluta ex?</p><br>
+              <!-- Placeholder for project tags -->
+               <span class="highlight">Tags:</span>
+              <div class="project-left-tags">
+                Node.js, SQL, C#
+              </div><!-- Buttons for GitHub and Live Demo -->
+              <div class="project-left-buttons">
+                <a href="https://github.com" target="_blank">GitHub</a> <a href="https://demo.com" target="_blank">Live Demo</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-left-photo"><!-- Placeholder for project photo -->
+          <img src="assets/jpeg/explorer_QhSlg2mVBe.jpg" alt="Project 1"></div>
+        </div>
+      </section><!-- Replace the Resume section with the Certifications section -->
+      <section id="certifications" class="content-section">
+        <h2>Certifications</h2><br>
+        <!-- Add your certifications here -->
+        <div class="certification"><img src="assets/jpeg/Network+Certificate.jpg" alt="CompTIA Network+"></div>
+        <div class="certification"><img src="assets/jpeg/A+Certificate.jpg" alt="CompTIA A+"></div>
+      </section>
+      <section id="blog" class="content-section">
+        <h2>Blog</h2><!-- Add your content for the Blog section here -->
+      </section>
+      <section id="contact" class="content-section">
+        <form action="send_email.php" method="post">
+          <label for="user_name">Your Name:</label> <input type="text" name="user_name" id="user_name" placeholder="John Doe" required=""> <label for="user_email">Your Email:</label> <input type="email" name="user_email" id="user_email" placeholder="John@email.com" required=""> <label for="email_subject">Subject:</label> <input type="text" name="email_subject" id="email_subject" placeholder="Interesting in connecting" required=""> <label for="email_body">Message:</label> 
+          <textarea name="email_body" id="email_body" rows="15"></textarea> <input type="submit" value="Submit">
+        </form>
+      </section>
+    </main>
+  </div><!-- Back to Top Button -->
+  <div id="backToTopBtn">
+    ⇧
+  </div>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="copyright">
+          <!-- Please leave this link to give me some credit for my work, thank you!-->
+          <p>Website Designed by <a href="https://www.linkedin.com/in/lorenzodortiz">Lorenzo Ortiz</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="javascript/script.js"></script>
 </body>
-
 </html>
