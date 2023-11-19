@@ -1,4 +1,14 @@
 <?php
+// Load environment variables from config.bash
+$configFile = __DIR__ . './config.bash';
+$configLines = explode("\n", file_get_contents($configFile));
+
+foreach ($configLines as $line) {
+    if (preg_match('/^\s*export\s+([^=]+)=(.*)$/', $line, $matches)) {
+        putenv($matches[1] . '=' . $matches[2]);
+    }
+}
+
 // Import PHPMailer classes into the global namespace
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -9,14 +19,14 @@ require 'vendor/autoload.php';
 
 // Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
-
+ 
 try {
     // Server settings
     $mail->isSMTP();                // Send using SMTP
-    $mail->Host       = 'smtp.titan.email';  // Set the SMTP server to send through
+    $mail->Host       = getenv('SMTP_HOST');  // Set the SMTP server to send through
     $mail->SMTPAuth   = true;        // Enable SMTP authentication
-    $mail->Username   = 'contact@lorenzodortiz.com';  // SMTP username
-    $mail->Password   = 'W2vZ0uiFUHPF&aa1';  // SMTP password
+    $mail->Username   = getenv('SMTP_USERNAME');  // SMTP username
+    $mail->Password   = getenv('SMTP_PASSWORD');  // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Enable implicit TLS encryption
     $mail->Port       = 465;         // TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
