@@ -1,6 +1,6 @@
 <?php
 // Load environment variables from config.bash
-$configFile = __DIR__ . './config.bash';
+$configFile = __DIR__ . '/config.bash'; // corrected path
 $configLines = explode("\n", file_get_contents($configFile));
 
 foreach ($configLines as $line) {
@@ -19,37 +19,42 @@ require 'vendor/autoload.php';
 
 // Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
- 
+
 try {
     // Server settings
-    $mail->isSMTP();                // Send using SMTP
-    $mail->Host       = getenv('SMTP_HOST');  // Set the SMTP server to send through
-    $mail->SMTPAuth   = true;        // Enable SMTP authentication
-    $mail->Username   = getenv('SMTP_USERNAME');  // SMTP username
-    $mail->Password   = getenv('SMTP_PASSWORD');  // SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Enable implicit TLS encryption
-    $mail->Port       = 465;         // ENCRYPTION_SMTPS 465 - TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->isSMTP(); // Send using SMTP
+    $mail->Host       = getenv('SMTP_HOST'); // Set the SMTP server to send through
+    $mail->SMTPAuth   = true; // Enable SMTP authentication
+    $mail->Username   = getenv('SMTP_USERNAME'); // SMTP username
+    $mail->Password   = getenv('SMTP_PASSWORD'); // SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Use STARTTLS encryption
+    $mail->Port       = 587; // Use port 587 for STARTTLS
 
     // Recipients
     $mail->setFrom('contact@lorenzodortiz.com', 'Portfolio');
-    $mail->addAddress('contact@lorenzodortiz.com', 'Portfolio');  // Add a recipient
+    $mail->addAddress('contact@lorenzodortiz.com', 'Portfolio'); // Add a recipient
     $mail->addReplyTo('contact@lorenzodortiz.com', 'Portfolio');
 
     // Attachments
 
     // Content
-    $mail->isHTML(true);  // Set email format to HTML
+    $mail->isHTML(true); // Set email format to HTML
 
-    // Retrieve the form fields
-    $firstname = $_GET['firstname'];
-    $lastname  = $_GET['lastname'];
-    $subject   = $_GET['subject'];
-    $message   = $_GET['message'];
+    // Retrieve the form fields (consider using $_POST instead of $_GET for form submissions)
+    $firstname = isset($_POST['firstname']) ? $_POST['firstname'] : '';
+    $lastname  = isset($_POST['lastname']) ? $_POST['lastname'] : '';
+    $subject   = isset($_POST['subject']) ? $_POST['subject'] : '';
+    $message   = isset($_POST['message']) ? $_POST['message'] : '';
+
+    // Add input validation if needed
 
     // Set the email subject and body
     $mail->Subject = $subject;
     $mail->Body    = "First Name: $firstname<br>Last Name: $lastname<br>Subject: $subject<br>Message: $message";
     $mail->AltBody = "First Name: $firstname\nLast Name: $lastname\nSubject: $subject\nMessage: $message";
+
+    // Enable SMTP debugging (comment out in production)
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
     $mail->send();
     echo 'Message has been sent';
