@@ -1,19 +1,27 @@
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    smoothScrolling();
+    backToTopButton();
+    toggleMenuIcon();
+    filterProjects();
+    setTopElementMargin();
 });
 
-// Back-to-top button functionality
-document.addEventListener("DOMContentLoaded", function () {
-    var backToTopButton = document.getElementById("backToTopBtn");
+function smoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+}
+
+function backToTopButton() {
+    const backToTopButton = document.getElementById("backToTopBtn");
 
     window.addEventListener("scroll", function () {
-        if (window.scrollY > 200) { 
+        if (window.scrollY > 200) {
             backToTopButton.classList.add("show");
         } else {
             backToTopButton.classList.remove("show");
@@ -33,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var time = Math.min(1, (now - startTime) / duration);
 
             window.scroll(0, Math.ceil((1 - time) * start + time * 0));
-            
+
             if (time < 1) {
                 requestAnimationFrame(scroll);
             }
@@ -41,10 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         scroll();
     }
-});
+}
 
-// Toggle menu icon and navigation links
-document.addEventListener("DOMContentLoaded", function () {
+function toggleMenuIcon() {
     const menuIcon = document.querySelector('.menu-icon');
     const navLinks = document.querySelector('.nav_links');
 
@@ -52,9 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
         navLinks.classList.toggle('show');
         menuIcon.classList.toggle('active');
     });
-});
+}
 
-document.addEventListener("DOMContentLoaded", function () {
+function filterProjects() {
     const projects = document.querySelectorAll(".project");
     const skillsSection = document.getElementById("skills-section");
     const filterButtonsContainer = document.getElementById("filter-buttons");
@@ -67,15 +74,14 @@ document.addEventListener("DOMContentLoaded", function () {
     skills.forEach((skill) => {
         const button = document.createElement("button");
         button.textContent = skill;
-        button.addEventListener("click", () => filterProjects(skill));
+        button.addEventListener("click", () => filterProjectsBySkill(skill));
         filterButtonsContainer.appendChild(button);
     });
 
     // Add event listener to the reset button
     resetButton.addEventListener("click", () => resetFilters());
 
-    // Function to filter projects based on the selected skill
-    function filterProjects(skill) {
+    function filterProjectsBySkill(skill) {
         projects.forEach((project) => {
             const projectSkills = project.dataset.skills.split(" ");
             const isSkillPresent = projectSkills.includes(skill);
@@ -87,27 +93,25 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Highlight the active filter button
         highlightActiveButton(skill);
     }
 
-    // Function to reset filters and display all projects
     function resetFilters() {
         projects.forEach((project) => (project.style.display = "block"));
-        // Remove active class from all buttons
         Array.from(filterButtonsContainer.children).forEach((button) => button.classList.remove("active"));
     }
 
-    // Function to highlight the active filter button
     function highlightActiveButton(skill) {
-        // Remove active class from all buttons
         Array.from(filterButtonsContainer.children).forEach((button) => button.classList.remove("active"));
-
-        // Add active class to the selected button
         const activeButton = Array.from(filterButtonsContainer.children).find((button) => button.textContent === skill);
         activeButton.classList.add("active");
     }
-});
+}
 
+function setTopElementMargin() {
+    const header = document.querySelector('header');
+    const topElement = document.getElementById('top');
+    const headerHeight = header.offsetHeight;
 
-
+    topElement.style.marginTop = `-${headerHeight}px`;
+}

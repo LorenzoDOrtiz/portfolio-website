@@ -34,11 +34,17 @@
         </header>
 
         <main>
-            <section id="top" class="content-section">
+            <section id="top">
                 <div>
                     <h2>Hey, I'm Lorenzo Ortiz</h2>
                     <p>Software Engineering & Ethical Hacking Student.</p>
+                    <div id="top-buttons">
+                        <a id=top-project-button class="button" href="#projects"><button style="margin-top: 10px;">Projects</button></a>
+                        <a id=top-resume-download-button class="button" href="resources/documents/Resume.pdf" download><button>Resume<br><img src=resources/images/logos/download-solid.svg alt="download logo"></button></a>
+                    </div>   
                 </div>
+
+           
             </section>
 
             <section id="about" class="content-section">
@@ -56,8 +62,8 @@
                         class="highlight">problem-solving</span> and technology. With a strong background in military
                     medicine, having served as a <span class="highlight">combat medic</span> in the US Army for four
                     years, I've received multiple honors for <span class="highlight">leadership</span>, <span
-                        class="highlight">medical preparedness</span>, and <span class="highlight">coordination
-                        skills</span> during deployments to Korea and assignments at Okubo Medical Clinic.
+                        class="highlight">medical preparedness</span>, and <span class="highlight">coordination skills</span>
+                    during deployments to Korea and assignments at Okubo Medical Clinic.
                 </p>
                 <p>
                     I am eager to apply my diverse experience and technical skills to the software engineering field. I
@@ -74,6 +80,7 @@
                         class="highlight">problem-solving</span>.
                 </p>
             </section>
+            
 
 
 
@@ -153,27 +160,29 @@
 
                 </div>
             </section>
+
+            <section id="contact" class="content-section">
+                <form action="send_email.php" method="post">
+                    <label for="user_name">Your Name:</label>
+                    <input type="text" name="user_name" id="user_name" placeholder="John Doe"  required>
+                
+                    <label for="user_email">Your Email:</label>
+                    <input type="email" name="user_email" id="user_email" placeholder="John@email.com" required>
+                
+                    <label for="email_subject">Subject:</label>
+                    <input type="text" name="email_subject" id="email_subject" placeholder="Interesting in connecting" required>
+                
+                    <label for="email_body">Message:</label>
+                    <textarea name="email_body" id="email_body" rows="15"></textarea>
+                
+                    <input type="submit" value="Submit">
+                </form>
+                
+                </div>
+            </section>
         </main>
 
-        <section id="contact" class="content-section">
-            <form action="send_email.php" method="post">
-                <label for="user_name">Your Name:</label>
-                <input type="text" name="user_name" id="user_name" required>
-            
-                <label for="user_email">Your Email:</label>
-                <input type="email" name="user_email" id="user_email" required>
-            
-                <label for="email_subject">Subject:</label>
-                <input type="text" name="email_subject" id="email_subject" required>
-            
-                <label for="email_body">Message:</label>
-                <textarea name="email_body" id="email_body" rows="4"></textarea>
-            
-                <input type="submit" value="Submit">
-            </form>
-            
-            </div>
-        </section>
+        
         
     </div>
 
