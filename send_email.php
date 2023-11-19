@@ -38,15 +38,16 @@ function send_email($user_name, $user_email, $email_subject, $email_body) {
         $mail->SMTPSecure = 'tls';
 
         // Set the email content
-        $mail->setFrom('contact@lorenzodortiz.com', $user_name); // Set the sender as a generic name
-        $mail->addAddress($sender_email); // Set the recipient as your email address
+        $mail->setFrom('contact@lorenzodortiz.com', $user_name);
+        $mail->addAddress($sender_email);
         $mail->Subject = $email_subject;
         $mail->addReplyTo($user_email, $user_name); // Set the "Reply-To" address to the user's email and name
 
-        
-        
         // Include user's email in the email body
         $mail->Body = "User's Name: $user_name\nUser's Email: $user_email\n\n" . $email_body;
+
+        // Add custom header for "From" name
+        $mail->addCustomHeader('From: ' . $user_name . ' <' . $user_email . '>');
 
         // Send the email
         if ($mail->send()) {
@@ -60,7 +61,5 @@ function send_email($user_name, $user_email, $email_subject, $email_body) {
     }
 }
 
-
 // Call the function to send the email
 send_email($user_name, $user_email, $email_subject, $email_body);
-?>
