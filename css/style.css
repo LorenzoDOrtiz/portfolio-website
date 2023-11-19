@@ -532,6 +532,15 @@ footer {
         padding-left: 50px;
        /* Add more left and right padding */
    }
+
+   #projects .project-left-details {
+        width: 100%;
+       /* Adjust the width as needed */
+        padding-left: 50px;
+       /* Add more left and right padding */
+        padding-right: 50px;
+       /* Add more left and right padding */
+   }
 }
 @media only screen and (min-width: 2200px) {
     #projects {
@@ -544,4 +553,9 @@ footer {
         padding-left: 100px;
        /* Add more left padding for screens wider than 2200px */
    }
+
+   #projects .project-right-details {
+    padding-right: 100px;
+   /* Add more left padding for screens wider than 2200px */
+}
 }
