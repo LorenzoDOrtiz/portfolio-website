@@ -284,6 +284,39 @@ button#project {
     border-radius: 8px;
     width: 600px;
 }
+
+#blog {
+    color: #edf0f1;
+    text-align: center;
+  }
+  
+  .blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .blog-post {
+    width: 300px;
+    margin: 20px;
+    padding: 15px;
+    background-color: #333333;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .blog-post:hover {
+    transform: scale(1.05);
+  }
+  
+  .blog-post h3 {
+    color: #0088a9;
+  }
+  
+  .blog-post p {
+    margin-top: 10px;
+  }
+  
 /* Add styling for the Contact section */
 section#contact {
     display: flex;
