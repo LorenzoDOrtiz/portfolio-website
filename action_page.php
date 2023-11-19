@@ -66,7 +66,7 @@ try {
 } catch (Exception $e) {
     // Log error to a file
     $errorMessage = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    error_log($errorMessage, 3, 'path/to/logfile.txt');
+    error_log($errorMessage, 3, 'log/logfile.txt');
 
     echo $errorMessage;
 }
