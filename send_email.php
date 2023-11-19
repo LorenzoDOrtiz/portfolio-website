@@ -38,9 +38,12 @@ function send_email($user_name, $user_email, $email_subject, $email_body) {
         $mail->SMTPSecure = 'tls';
 
         // Set the email content
-        $mail->setFrom('contact@lorenzodortiz.com', 'Portfolio Contact Form'); // Set the sender as a generic name
+        $mail->setFrom('contact@lorenzodortiz.com', $user_name); // Set the sender as a generic name
         $mail->addAddress($sender_email); // Set the recipient as your email address
         $mail->Subject = $email_subject;
+        $mail->addReplyTo($user_email, $user_name); // Set the "Reply-To" address to the user's email and name
+
+        
         
         // Include user's email in the email body
         $mail->Body = "User's Name: $user_name\nUser's Email: $user_email\n\n" . $email_body;
