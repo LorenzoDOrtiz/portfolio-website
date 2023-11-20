@@ -824,12 +824,6 @@ footer {
     }
 
 }
-
-section#contact form textarea {
-    width: 100%;
-    resize: vertical;
-}
-
-section#contact form label {
-    text-align: left;
+    section#contact form label {
+        text-align: left;
 }
