@@ -689,11 +689,11 @@ footer {
         display: block;
         position: fixed;
         /* Set the position to fixed for absolute positioning on the screen */
-        bottom: 20px;
+        bottom: 40px;
         /* Adjust the distance from the bottom */
-        right: 20px;
+        right: 22px;
         /* Adjust the distance from the right */
-        width: 30px;
+        width: 25px;
         margin-top: 5px;
     }
 
@@ -732,7 +732,8 @@ footer {
         top: auto;
         padding: 5px;
         border-radius: 5px;
-        bottom: 15px;
+        bottom: 35px;
+        width: 25px;
         /* Adjust bottom property for the desired distance from the bottom */
 
     }
