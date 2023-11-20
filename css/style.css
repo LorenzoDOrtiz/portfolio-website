@@ -331,9 +331,8 @@ button#project {
 .project-container {
     display: flex;
     align-items: center;
-    /* Center vertically */
     justify-content: center;
-    /* Center horizontally */
+    width: 100%; /* Use 100% width for the container */
 }
 
 .project-details {
@@ -342,13 +341,9 @@ button#project {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 0 auto;
-    width: 70%;
-    /* Adjust the width as needed */
+    width: 60%; /* Adjust the width for project-details */
     padding: 0 20px;
-    /* Add minimum left and right padding */
-    max-width: 50%;
-    /* Adjust the maximum width as needed */
+    box-sizing: border-box;
 }
 
 .project-info {
@@ -377,13 +372,18 @@ button#project {
 }
 
 .project-photo {
-    margin-left: auto;
+    flex-shrink: 0; /* Prevent the container from shrinking */
+    width: 40%; /* Adjust the width for project-photo */
 }
 
 .project-photo img {
-    width: 80%;
-    /* Adjusted image width for responsiveness */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
+
+
 
 .certification img {
     max-width: 100%;
@@ -649,7 +649,21 @@ footer {
     .project {
         display: flex;
         flex-direction: column;
-        margin-top: 30px;
+        align-items: center; /* Center items horizontally in the column */
+    }
+
+    .project-container {
+        width: 100%; /* Adjust the width for the project container */
+        margin: 0 auto; /* Center the container horizontally */
+    }
+
+    .project-details {
+        width: 100%; /* Adjust the width for project-details to 100% */
+    }
+
+    .project-photo {
+        margin-top: 20px; /* Add margin to separate project-details and project-photo */
+        width: 100%; /* Adjust the width for project-photo to 100% */
     }
 
     .filter-buttons {
