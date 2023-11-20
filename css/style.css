@@ -185,7 +185,7 @@ button:hover {
 
 /* Adjust the styling of the 'top' section to accommodate the padding */
 #top {
-    background-image: url("/resources/images/backgrounds/42.jpg");
+    background-image: url("/resources/images/backgrounds/42.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
