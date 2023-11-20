@@ -7,20 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleMenuIcon();
     extractTags();
     createFilterButtons();
-
-    // Add the code for button resizing
-    const buttons = document.querySelectorAll('.filter-buttons button');
-    let maxWidth = 0;
-
-    buttons.forEach((button) => {
-        if (button.offsetWidth > maxWidth) {
-            maxWidth = button.offsetWidth;
-        }
-    });
-
-    buttons.forEach((button) => {
-        button.style.width = `${maxWidth}px`;
-    });
 });
 
 function smoothScrolling() {
@@ -87,6 +73,14 @@ function toggleMenuIcon() {
     });
 }
 
+function closeBanner() {
+    // Get the inprogress-label element
+    var inprogressLabel = document.getElementById('inprogress-label');
+
+    // Hide the inprogress-label
+    inprogressLabel.style.display = 'none';
+}
+
 function extractTags() {
     const projects = document.querySelectorAll('.project');
     allTags = [];
@@ -142,7 +136,21 @@ function toggleFilter(tag) {
         const showProject = Array.from(document.querySelectorAll('.filter-buttons button.active')).some((activeButton) => projectTags.includes(activeButton.innerText));
 
         // Toggle the project visibility
-        project.style.display = showProject ? 'block' : 'none';
+        project.style.display = showProject ? 'flex' : 'none'; // Set display to 'flex' to maintain the flexbox layout
+
+        // Apply transition class to the clicked project's image
+        if (showProject) {
+            project.addEventListener('click', () => {
+                const clickedImage = project.querySelector('.project-photo img');
+                clickedImage.classList.add('centered');
+
+                // Remove the 'centered' class from other images in the same project
+                const otherImages = project.querySelectorAll('.project-photo img:not(.centered)');
+                otherImages.forEach((img) => {
+                    img.classList.remove('centered');
+                });
+            });
+        }
     });
 }
 
@@ -160,8 +168,3 @@ function resetFilters() {
         project.style.display = 'flex'; // Set display to 'flex' to maintain the flexbox layout
     });
 }
-function closeBanner() {
-    document.getElementById('inprogress-label').style.display = 'none';
-}
-
-
