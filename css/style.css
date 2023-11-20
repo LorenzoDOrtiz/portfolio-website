@@ -33,13 +33,16 @@
     padding: 5px;
     font-size: 18px;
     color: white;
-    background-color: #333; /* Add a background color */
-    border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+    background-color: #333;
+    /* Add a background color */
+    border-radius: 5px;
+    /* Optional: Add border-radius for rounded corners */
     margin-top: 5px;
 }
 
 #close-btn:hover {
-    background-color: #555; /* Change background color on hover */
+    background-color: #555;
+    /* Change background color on hover */
     color: #ddd;
 }
 
@@ -47,6 +50,7 @@
     0% {
         background-position: 200% 0;
     }
+
     100% {
         background-position: -200% 0;
     }
@@ -65,38 +69,46 @@
     padding: 15px;
     border-radius: 10px;
     z-index: 99;
-  }
-  
-  .social-media-link {
+}
+
+.social-media-link {
     margin-bottom: 10px;
-  }
-  
-  /* Add this CSS for social media icons hover effect */
+}
+
+/* Add this CSS for social media icons hover effect */
 .social-media-link img {
-    width: 40px; /* Adjust the size of the social media icons as needed */
+    width: 40px;
+    /* Adjust the size of the social media icons as needed */
     height: auto;
     border-radius: 50%;
-    transition: transform 0.3s ease; /* Add a transition effect for smooth scaling */
+    transition: transform 0.3s ease;
+    /* Add a transition effect for smooth scaling */
 }
 
 .social-media-link:hover img {
-    transform: scale(1.2); /* Scale the social media icon on hover */
+    transform: scale(1.2);
+    /* Scale the social media icon on hover */
 }
 
 
 .wrapper {
-    overflow: hidden; /* Hide any content that overflows the wrapper */
+    overflow: hidden;
+    /* Hide any content that overflows the wrapper */
 }
+
 h2 {
-    color: #ffffff 
+    color: #ffffff
 }
+
 .container {
     max-width: 100%;
     margin: 0 auto;
 }
+
 body {
     flex-direction: column;
 }
+
 header {
     display: flex;
     justify-content: flex-end;
@@ -111,26 +123,32 @@ header {
     background-color: #1a1a1a;
     color: #ffffff;
 }
+
 .headerlogo {
     cursor: none;
     height: 50px;
     padding: 10px;
     margin-right: auto;
 }
+
 .nav_links {
     list-style: none;
 }
+
 /* Add styling for the navigation links */
 .nav_links li {
     display: inline-block;
     padding: 0px 20px;
 }
+
 .nav_links li a {
     transition: all 0.3s ease 0s;
 }
+
 .nav_links li a:hover {
     color: #0088a9;
 }
+
 button {
     margin-left: 20px;
     padding: 9px 25px;
@@ -140,25 +158,31 @@ button {
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
+
 button:hover {
     background-color: rgba(52, 152, 219, 0.8);
 }
+
 .content-section {
     text-align: center;
-    padding: 20px;
-    box-sizing: border-box; /* Include padding in the element's total width and height */
-    overflow: hidden; /* Hide any content that overflows the padding */
+    padding: 60px;
+    box-sizing: border-box;
+    /* Include padding in the element's total width and height */
+    overflow: hidden;
+    /* Hide any content that overflows the padding */
 }
 
 /* Add the alternating background colors */
 .content-section:nth-child(odd) {
     background-color: #222222;
-   /* Lighter color for odd sections */
+    /* Lighter color for odd sections */
 }
+
 .content-section:nth-child(even) {
     background-color: #1e1e1e;
-   /* Darker color for even sections */
+    /* Darker color for even sections */
 }
+
 /* Adjust the styling of the 'top' section to accommodate the padding */
 #top {
     background-image: url("/resources/images/backgrounds/42.jpg");
@@ -172,20 +196,23 @@ button:hover {
     align-items: center;
     text-align: center;
 }
+
 #top-buttons {
     display: flex;
     flex-direction: column;
-   /* Change to row for horizontal alignment */
+    /* Change to row for horizontal alignment */
     justify-content: center;
     align-items: center;
 }
+
 #top-buttons a {
     margin: 10px;
-   /* Adjust the spacing around buttons */
+    /* Adjust the spacing around buttons */
 }
+
 #top-buttons button {
     width: 100px;
-   /* Set a fixed width for the buttons */
+    /* Set a fixed width for the buttons */
     padding: 5px;
     background-color: rgba(52, 152, 219, 1);
     border: none;
@@ -193,53 +220,67 @@ button:hover {
     cursor: pointer;
     transition: all 0.3s ease 0s;
 }
+
 #top-buttons button:hover {
     background-color: rgba(52, 152, 219, 0.8);
 }
+
 #top-buttons img {
     width: 15px;
-   /* Set the width of the download image */
+    /* Set the width of the download image */
 }
+
 /* Adjust the styling of the 'top' section text */
 #top p {
     font-size: 1.5em;
     margin-top: 10px;
-   /* Add some margin for spacing */
+    /* Add some margin for spacing */
 }
+
 .highlight {
     color: #f39c12;
-   /* Highlight color for keywords */
+    /* Highlight color for keywords */
 }
+
 button#project {
     margin: 50px;
 }
+
 /* Add styling for the About Me section */
 #about {
     color: #edf0f1;
     text-align: center;
 }
+
 #about p {
     font-size: 1.2em;
     padding: 1% 30%;
 }
+
 #about strong {
     color: #0088a9;
-   /* Highlight color for strong tags */
+    /* Highlight color for strong tags */
 }
+
 .filter-container {
-   
-    align-items: center; /* Center the content horizontally */
+
+    align-items: center;
+    /* Center the content horizontally */
     border: 2px solid #464a4e;
     border-radius: 5px;
-    max-width: fit-content; /* Set a maximum width for the container */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 10px; /* Add padding for spacing */
+    max-width: fit-content;
+    /* Set a maximum width for the container */
+    margin: 0 auto;
+    /* Center the container horizontally */
+    padding: 10px;
+    /* Add padding for spacing */
     margin-top: 15px;
 }
 
 .filter-buttons {
-    
-    align-items: center; /* Center the buttons horizontally */
+
+    align-items: center;
+    /* Center the buttons horizontally */
     border-radius: 5px;
 }
 
@@ -250,7 +291,8 @@ button#project {
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     border: 3px solid #1e1e1e;
-    margin: 5px; /* Adjust margin for spacing between buttons */
+    margin: 5px;
+    /* Adjust margin for spacing between buttons */
 }
 
 .filter-buttons button.active,
@@ -265,9 +307,12 @@ button#project {
     transition: background-color 0.3s ease, color 0.3s ease;
     border: 3px solid darkred;
     background-color: rgba(196, 11, 11, 0.8);
-    margin: 5px; /* Adjust margin for spacing */
-    width: fit-content; /* Adjust the width to fit the content */
-    padding: 5px 10px; /* Adjust padding for button size */
+    margin: 5px;
+    /* Adjust margin for spacing */
+    width: fit-content;
+    /* Adjust the width to fit the content */
+    padding: 5px 10px;
+    /* Adjust padding for button size */
 }
 
 .reset-button:hover {
@@ -285,8 +330,10 @@ button#project {
 
 .project-container {
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
 }
 
 .project-details {
@@ -296,9 +343,13 @@ button#project {
     align-items: center;
     text-align: center;
     margin: 0 auto;
-    width: 70%; /* Adjust the width as needed */
-    padding: 0 20px; /* Add minimum left and right padding */
-    max-width: 50%; /* Adjust the maximum width as needed */}
+    width: 70%;
+    /* Adjust the width as needed */
+    padding: 0 20px;
+    /* Add minimum left and right padding */
+    max-width: 50%;
+    /* Adjust the maximum width as needed */
+}
 
 .project-info {
     text-align: center;
@@ -330,8 +381,10 @@ button#project {
 }
 
 .project-photo img {
-    width: 80%; /* Adjusted image width for responsiveness */
+    width: 80%;
+    /* Adjusted image width for responsiveness */
 }
+
 .certification img {
     max-width: 100%;
     height: auto;
@@ -342,35 +395,35 @@ button#project {
 #blog {
     color: #edf0f1;
     text-align: center;
-  }
-  
-  .blog-posts {
+}
+
+.blog-posts {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  
-  .blog-post {
+}
+
+.blog-post {
     width: 300px;
     margin: 20px;
     padding: 15px;
     background-color: #333333;
     border-radius: 8px;
     transition: transform 0.3s ease;
-  }
-  
-  .blog-post:hover {
+}
+
+.blog-post:hover {
     transform: scale(1.05);
-  }
-  
-  .blog-post h3 {
+}
+
+.blog-post h3 {
     color: #0088a9;
-  }
-  
-  .blog-post p {
+}
+
+.blog-post p {
     margin-top: 10px;
-  }
-  
+}
+
 /* Add styling for the Contact section */
 section#contact {
     display: flex;
@@ -379,25 +432,33 @@ section#contact {
     align-items: center;
     padding-top: 20px;
 }
+
 section#contact form {
     max-width: 100%;
 }
-section#contact form label, section#contact form input, section#contact form textarea {
+
+section#contact form label,
+section#contact form input,
+section#contact form textarea {
     display: flex;
     margin-bottom: 15px;
 }
-section#contact form input, section#contact form textarea {
+
+section#contact form input,
+section#contact form textarea {
     color: black;
 }
 
-section#contact form input{
+section#contact form input {
     width: 10vw;
     height: 2vh;
 }
+
 section#contact form textarea {
     width: 40vw;
     resize: vertical;
 }
+
 section#contact form input[type="submit"] {
     background-color: rgba(52, 152, 219, 1);
     border: none;
@@ -407,9 +468,11 @@ section#contact form input[type="submit"] {
     transition: all 0.3s ease 0s;
     ;
 }
+
 section#contact form input[type="submit"]:hover {
     background-color: rgba(52, 152, 219, 0.8);
 }
+
 #backToTopBtn {
     position: fixed;
     bottom: 40px;
@@ -420,33 +483,40 @@ section#contact form input[type="submit"]:hover {
     border-radius: 5px;
     cursor: pointer;
     opacity: 0;
-   /* Start with 0 opacity */
+    /* Start with 0 opacity */
     transition: opacity .8s ease;
-   /* Add a transition for the opacity property */
+    /* Add a transition for the opacity property */
 }
+
 #backToTopBtn.show {
     opacity: 1;
-   /* Show the button by setting opacity to 1 */
+    /* Show the button by setting opacity to 1 */
 }
+
 #backToTopBtn:hover {
     background-color: rgba(52, 152, 219, 0.8);
 }
+
 footer {
     background-color: #1a1a1a;
     padding: 10px 30px;
     border-top: 3px solid #1d1e22;
-    
+
 }
+
 .footer-content {
     text-align: center;
 }
+
 .copyright {
     font-size: 14px;
 }
+
 .copyright a {
     font-size: 14px;
     text-decoration: underline;
 }
+
 .certification img {
     max-width: 100%;
     width: 50vw;
@@ -457,16 +527,19 @@ footer {
 
 /* Existing styles remain unchanged */
 @media only screen and (max-width: 600px) {
-   /* Adjustments for smaller screens */
+
+    /* Adjustments for smaller screens */
     header {
         justify-content: space-between;
         padding: 0 2%;
-   }
+    }
+
     .headerlogo {
         width: 150px;
         margin: 0 auto;
-       /* Center the logo horizontally */
-   }
+        /* Center the logo horizontally */
+    }
+
     .nav_links {
         display: flex;
         flex-direction: column;
@@ -477,85 +550,102 @@ footer {
         left: 0;
         z-index: 99;
         opacity: 0;
-       /* Initially set to 0 */
+        /* Initially set to 0 */
         transform: translateY(100%);
-       /* Initially off the screen */
+        /* Initially off the screen */
         transition: opacity 0.8s ease, transform 0.8s ease;
-       /* Add transition for smooth effect */
-   }
+        /* Add transition for smooth effect */
+    }
+
     .nav_links.show {
         opacity: 1;
-       /* Fade in by setting opacity to 1 */
+        /* Fade in by setting opacity to 1 */
         transform: translateY(0);
-   }
+    }
+
     .nav_links li {
         padding: 15px;
-   }
+    }
+
     .cta {
         display: none;
-   }
+    }
+
     #backToTopBtn {
         display: none;
-   }
+    }
+
     .menu-icon {
         cursor: pointer;
         display: block;
         position: fixed;
-       /* Set the position to fixed for absolute positioning on the screen */
+        /* Set the position to fixed for absolute positioning on the screen */
         bottom: 20px;
-       /* Adjust the distance from the bottom */
+        /* Adjust the distance from the bottom */
         right: 20px;
-       /* Adjust the distance from the right */
+        /* Adjust the distance from the right */
         width: 30px;
         margin-top: 5px;
-   }
+    }
+
     .menu-icon div {
         width: 30px;
         height: 3px;
         background-color: grey;
         margin: 6px 10px;
         transition: 1s;
-   }
+    }
+
     .menu-icon.active div:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
-   }
+    }
+
     .menu-icon.active div:nth-child(2) {
         opacity: 0;
-   }
+    }
+
     .menu-icon.active div:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
-   }
+    }
+
     #about p {
         font-size: 1em;
         padding: 0;
-   }
+    }
+
     section#contact form textarea {
         width: 100%;
         resize: vertical;
-   }
+    }
+
     section#contact form label {
         text-align: left;
-   }
+    }
+
     #top-buttons button {
         align-items: center;
-   }
-  
+    }
+
     #top {
         height: 100vh;
-       /* Allow the height to adjust based on content */
-   }
+        /* Allow the height to adjust based on content */
+    }
+
     #top-buttons a {
         margin: 10px;
-       /* Adjusted spacing around buttons */
-   }
+        /* Adjusted spacing around buttons */
+    }
+
     #top-buttons button {
         width: auto;
-       /* Allow the width to adjust based on content */
-   }
+        /* Allow the width to adjust based on content */
+    }
+
     #top-buttons img {
         width: 15px;
-       /* Adjusted size of the download image */
-   }
+        /* Adjusted size of the download image */
+    }
+
     .project {
         display: flex;
         flex-direction: column;
@@ -563,37 +653,51 @@ footer {
     }
 
     .filter-buttons {
-        flex-direction: row; /* Change to 'row' for smaller screens */
-        justify-content: center; /* Center the buttons horizontally on smaller screens */
-        align-items: center; /* Center the buttons vertically in the container */
+        flex-direction: row;
+        /* Change to 'row' for smaller screens */
+        justify-content: center;
+        /* Center the buttons horizontally on smaller screens */
+        align-items: center;
+        /* Center the buttons vertically in the container */
     }
 
 
     #social-media-box {
-        left: auto; /* Reset left property */
-        right: 5px; /* Set the right property */
+        left: auto;
+        /* Reset left property */
+        right: 5px;
+        /* Set the right property */
         top: auto;
         padding: 5px;
         border-radius: 5px;
-        bottom: 15px; /* Adjust bottom property for the desired distance from the bottom */
+        bottom: 15px;
+        /* Adjust bottom property for the desired distance from the bottom */
 
     }
 
     .social-media-link img {
-        width: 30px; /* Adjust size for mobile */
+        width: 30px;
+        /* Adjust size for mobile */
     }
+
 
     .certification img {
         max-width: 100%;
         height: auto;
         border-radius: 8px;
         width: 80vw;
+        display: block;
+        /* Ensure it's a block-level element for margin: auto to work */
+        margin: auto;
+        /* Center the image horizontally */
+        margin-top: 20px;
     }
 
-    section#contact form input{
+    section#contact form input {
         width: 30vw;
         height: 2vh;
     }
+
     section#contact form textarea {
         width: 60vw;
         resize: vertical;
