@@ -226,141 +226,111 @@ button#project {
     color: #0088a9;
    /* Highlight color for strong tags */
 }
-.filter-buttons {
-    display: flex;
-    margin: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-   /* Add a border around the buttons */
+.filter-container {
+   
+    align-items: center; /* Center the content horizontally */
     border: 2px solid #464a4e;
     border-radius: 5px;
-    padding: 10px;
-   /* Adjust padding as needed */
+    max-width: fit-content; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 10px; /* Add padding for spacing */
+    margin-top: 15px;
 }
+
+.filter-buttons {
+    
+    align-items: center; /* Center the buttons horizontally */
+    border-radius: 5px;
+}
+
 .filter-buttons button {
-   /* Adjust margin for spacing between buttons */
-    padding: 8px 12px;
     background-color: #464a4e;
-   /* Light grey */
     color: #edf0f1;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     border: 3px solid #1e1e1e;
+    margin: 5px; /* Adjust margin for spacing between buttons */
 }
-.filter-buttons button.active, .filter-buttons button:hover {
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
     background-color: rgba(52, 152, 219, 0.8);
     color: #fff;
 }
+
 .reset-button {
-   /* Adjust margin for spacing between buttons */
-    padding: 4px 10px;
-   /* Light grey */
-    color: #edf0f1;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     border: 3px solid darkred;
     background-color: rgba(196, 11, 11, 0.8);
+    margin: 5px; /* Adjust margin for spacing */
+    width: fit-content; /* Adjust the width to fit the content */
+    padding: 5px 10px; /* Adjust padding for button size */
 }
+
 .reset-button:hover {
     background-color: rgb(252, 0, 0);
     color: #fff;
 }
-.project-right {
+
+
+
+.project {
     display: flex;
     flex-direction: row;
     margin-top: 30px;
 }
-.project-right-info {
-    text-align: center;
-    max-width: 600px;
+
+.project-container {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
 }
-/* Add this CSS to center .project-right-details */
-.project-right-details {
+
+.project-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin: 0 auto;
-   /* Center horizontally */
-    width: 70%;
-   /* Adjust the width as needed */
-    padding: 0 20px;
-   /* Add minimum left and right padding */
+    width: 70%; /* Adjust the width as needed */
+    padding: 0 20px; /* Add minimum left and right padding */
+    max-width: 50%; /* Adjust the maximum width as needed */}
+
+.project-info {
+    text-align: center;
 }
-.project-right-tags {
+
+.project-tags {
     margin-top: 10px;
 }
-.project-right-buttons {
+
+.project-buttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-.project-right-buttons a {
+
+.project-buttons a {
     margin: 10px;
     padding: 5px 10px;
     background-color: rgba(52, 152, 219, 1);
     border-radius: 5px;
 }
-.project-right-buttons a:hover {
+
+.project-buttons a:hover {
     background-color: rgba(52, 152, 219, 0.8);
 }
-.project-right-photo {
+
+.project-photo {
     margin-left: auto;
-   /* Move the image to the right edge */
 }
-.project-right-photo img {
-    width: 600px;
-}
-.project-left {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-top: 30px;
-}
-.project-left-info {
-    text-align: center;
-    max-width: 600px;
-}
-/* Add this CSS to center .project-right-details */
-.project-left-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-   /* Center horizontally */
-    width: 70%;
-   /* Adjust the width as needed */
-    padding: 0 20px;
-   /* Add minimum left and right padding */
-}
-.project-left-tags {
-    margin-top: 10px;
-}
-.project-left-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.project-left-buttons a {
-    margin: 10px;
-    padding: 5px 10px;
-    background-color: rgba(52, 152, 219, 1);
-    border-radius: 5px;
-}
-.project-left-buttons a:hover {
-    background-color: rgba(52, 152, 219, 0.8);
-}
-.project-left-photo {
-    margin-left: auto;
-   /* Move the image to the right edge */
-}
-.project-left-photo img {
-    width: 600px;
+
+.project-photo img {
+    width: 80%; /* Adjusted image width for responsiveness */
 }
 .certification img {
     max-width: 100%;
@@ -411,8 +381,6 @@ section#contact {
 }
 section#contact form {
     max-width: 100%;
-   /* Adjust the maximum width as needed */
-    width: 600px;
 }
 section#contact form label, section#contact form input, section#contact form textarea {
     display: flex;
@@ -421,8 +389,13 @@ section#contact form label, section#contact form input, section#contact form tex
 section#contact form input, section#contact form textarea {
     color: black;
 }
+
+section#contact form input{
+    width: 10vw;
+    height: 2vh;
+}
 section#contact form textarea {
-    width: 600px;
+    width: 40vw;
     resize: vertical;
 }
 section#contact form input[type="submit"] {
@@ -476,15 +449,14 @@ footer {
 }
 .certification img {
     max-width: 100%;
+    width: 50vw;
     height: auto;
     border-radius: 8px;
+    margin: 30px;
 }
-.certification p {
-    margin-top: 10px;
-    font-size: 1.2em;
-}
+
 /* Existing styles remain unchanged */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 600px) {
    /* Adjustments for smaller screens */
     header {
         justify-content: space-between;
@@ -541,7 +513,7 @@ footer {
         width: 30px;
         height: 3px;
         background-color: grey;
-        margin: 6px 0;
+        margin: 6px 10px;
         transition: 1s;
    }
     .menu-icon.active div:nth-child(1) {
@@ -567,10 +539,7 @@ footer {
     #top-buttons button {
         align-items: center;
    }
-    .content-section {
-        padding: 50px;
-       /* Adjusted padding for smaller screens */
-   }
+  
     #top {
         height: 100vh;
        /* Allow the height to adjust based on content */
@@ -587,59 +556,47 @@ footer {
         width: 15px;
        /* Adjusted size of the download image */
    }
-    .project-left, .project-right {
+    .project {
+        display: flex;
         flex-direction: column;
-       /* Adjusted for vertical stacking on smaller screens */
-   }
-    .project-left-photo, .project-right-photo {
-        margin-left: 0;
-       /* Reset margin for image alignment */
-   }
-    .project-left-photo img, .project-right-photo img {
-        width: 100%;
-       /* Adjusted image width for responsiveness */
-   }
-}
-/* Additional styles for larger screens */
-@media only screen and (min-width: 1450px) {
-    #projects {
-        padding-left: 400px;
-       /* Adjust the left padding for larger screens as needed */
-        padding-right: 400px;
-       /* Adjust the right padding for larger screens as needed */
-   }
-    #projects .project-right-details {
-        width: 100%;
-       /* Adjust the width as needed */
-        padding-right: 50px;
-       /* Add more left and right padding */
-        padding-left: 50px;
-       /* Add more left and right padding */
-   }
+        margin-top: 30px;
+    }
 
-   #projects .project-left-details {
-        width: 100%;
-       /* Adjust the width as needed */
-        padding-left: 50px;
-       /* Add more left and right padding */
-        padding-right: 50px;
-       /* Add more left and right padding */
-   }
-}
-@media only screen and (min-width: 2200px) {
-    #projects {
-        padding-left: 600px;
-       /* Adjust the left padding for larger screens as needed */
-        padding-right: 600px;
-       /* Adjust the right padding for larger screens as needed */
-   }
-    #projects .project-right-details {
-        padding-left: 100px;
-       /* Add more left padding for screens wider than 2200px */
-   }
+    .filter-buttons {
+        flex-direction: row; /* Change to 'row' for smaller screens */
+        justify-content: center; /* Center the buttons horizontally on smaller screens */
+        align-items: center; /* Center the buttons vertically in the container */
+    }
 
-   #projects .project-right-details {
-    padding-right: 100px;
-   /* Add more left padding for screens wider than 2200px */
-}
+
+    #social-media-box {
+        left: auto; /* Reset left property */
+        right: 5px; /* Set the right property */
+        top: auto;
+        padding: 5px;
+        border-radius: 5px;
+        bottom: 15px; /* Adjust bottom property for the desired distance from the bottom */
+
+    }
+
+    .social-media-link img {
+        width: 30px; /* Adjust size for mobile */
+    }
+
+    .certification img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        width: 80vw;
+    }
+
+    section#contact form input{
+        width: 30vw;
+        height: 2vh;
+    }
+    section#contact form textarea {
+        width: 60vw;
+        resize: vertical;
+    }
+
 }

@@ -88,23 +88,23 @@ function toggleMenuIcon() {
 }
 
 function extractTags() {
-  const projects = document.querySelectorAll('.project-left, .project-right');
-  allTags = [];
-
-  projects.forEach((project) => {
-    const tagsString = project.querySelector('.project-left-tags, .project-right-tags').innerText;
-    const tags = tagsString.split(', ');
-
-    tags.forEach((tag) => {
-      if (!allTags.includes(tag)) {
-        allTags.push(tag);
-      }
+    const projects = document.querySelectorAll('.project');
+    allTags = [];
+  
+    projects.forEach((project) => {
+      const tagsString = project.querySelector('.project-tags').innerText;
+      const tags = tagsString.split(', ');
+  
+      tags.forEach((tag) => {
+        if (!allTags.includes(tag)) {
+          allTags.push(tag);
+        }
+      });
     });
-  });
-
-  console.log(allTags);
-}
-
+  
+    console.log(allTags);
+  }
+  
 function createFilterButtons() {
   const filterButtonsContainer = document.getElementById('filter-buttons');
 
@@ -127,7 +127,7 @@ function createFilterButtons() {
 }
 
 function toggleFilter(tag) {
-  const projects = document.querySelectorAll('.project-left, .project-right');
+  const projects = document.querySelectorAll('.project');
 
   // Toggle active class on the button
   const button = document.getElementById(tag);
@@ -135,7 +135,7 @@ function toggleFilter(tag) {
 
   // Filter projects based on selected tags
   projects.forEach((project) => {
-    const projectTagsString = project.querySelector('.project-left-tags, .project-right-tags').innerText;
+    const projectTagsString = project.querySelector('.project-tags').innerText;
     const projectTags = projectTagsString.split(', ');
 
     // Check if at least one selected tag is present in the project
@@ -155,7 +155,7 @@ function resetFilters() {
   });
 
   // Show all projects
-  const projects = document.querySelectorAll('.project-left, .project-right');
+  const projects = document.querySelectorAll('.project');
   projects.forEach((project) => {
     project.style.display = 'flex'; // Set display to 'flex' to maintain the flexbox layout
   });
@@ -163,3 +163,4 @@ function resetFilters() {
 function closeBanner() {
     document.getElementById('inprogress-label').style.display = 'none';
 }
+
