@@ -15,6 +15,23 @@
     text-decoration: none;
 }
 
+/* font sizes! */
+
+h1{ 
+    font-size: 3em
+}
+
+h2{ 
+    font-size: 2em
+}
+
+h3{ 
+    font-size: 1.3em
+}
+
+
+
+
 #inprogress-label {
     display: flex;
     justify-content: space-between;
@@ -30,13 +47,13 @@
     background: linear-gradient(to right, #ff3300, #feb47b);
     background-size: 200% 100%;
     animation: gradientAnimation 5s ease infinite;
-    color: white;
     padding: 10px;
 }
 
 #inprogress-text {
     flex-grow: 1;
     padding-left: 20px;
+    color: black;
 }
 
 #inprogress-x-text{
@@ -48,7 +65,6 @@
 #close-btn {
     cursor: pointer;
     padding: 5px;
-    font-size: 18px;
     color: white;
     background-color: #333;
     border-radius: 5px;
@@ -97,13 +113,9 @@
         -ms-flex-pack: center;
             justify-content: center;
     background-color: #333;
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px;
     z-index: 99;
-}
-
-.social-media-link {
-    margin-bottom: 10px;
 }
 
 /* Add this CSS for social media icons hover effect */
@@ -133,9 +145,7 @@
     /* Hide any content that overflows the wrapper */
 }
 
-h2 {
-    color: #ffffff
-}
+
 
 .container {
     max-width: 100%;
@@ -215,7 +225,11 @@ button:hover {
 
 .content-section {
     text-align: center;
-    padding: 60px;
+padding-left: 10%;
+padding-right: 10%;
+padding-top: 2%;
+padding-bottom: 2%;
+
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     /* Include padding in the element's total width and height */
@@ -303,7 +317,6 @@ button:hover {
 
 /* Adjust the styling of the 'top' section text */
 #top p {
-    font-size: 1.5em;
     margin-top: 10px;
     /* Add some margin for spacing */
 }
@@ -323,10 +336,6 @@ button#project {
     text-align: center;
 }
 
-#about p {
-    font-size: 1.2em;
-    padding: 1% 30%;
-}
 
 #about strong {
     color: #0088a9;
@@ -345,24 +354,20 @@ button#project {
     border-radius: 5px;
     max-width: -webkit-fit-content;
     max-width: -moz-fit-content;
-    max-width: fit-content;
+    max-width: 60%;
     /* Set a maximum width for the container */
     margin: 0 auto;
     /* Center the container horizontally */
     padding: 10px;
     /* Add padding for spacing */
     margin-top: 15px;
+    border: 3px solid #2e3135;
+
 }
 
 .filter-buttons {
-
-    -webkit-box-align: center;
-
-        -ms-flex-align: center;
-
-            align-items: center;
-    /* Center the buttons horizontally */
-    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
 }
 
 .filter-buttons button {
@@ -373,9 +378,9 @@ button#project {
     -webkit-transition: background-color 0.3s ease, color 0.3s ease;
     -o-transition: background-color 0.3s ease, color 0.3s ease;
     transition: background-color 0.3s ease, color 0.3s ease;
-    border: 3px solid #1e1e1e;
     margin: 5px;
-    /* Adjust margin for spacing between buttons */
+    width: 100px; /* Set a fixed width for all buttons, adjust as needed */
+    white-space: nowrap; /* Prevent button text from wrapping */
 }
 
 .filter-buttons button.active,
@@ -393,19 +398,16 @@ button#project {
     border: 3px solid darkred;
     background-color: rgba(196, 11, 11, 0.8);
     margin: 5px;
-    /* Adjust margin for spacing */
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    /* Adjust the width to fit the content */
+    width: 100px; /* Set a fixed width for the reset button, adjust as needed */
     padding: 5px 10px;
-    /* Adjust padding for button size */
+    white-space: nowrap; /* Prevent button text from wrapping */
 }
 
 .reset-button:hover {
     background-color: rgb(252, 0, 0);
     color: #fff;
 }
+
 
 
 
@@ -500,9 +502,6 @@ button#project {
     border-radius: 8px;
 }
 
-
-
-
 .certification img {
     max-width: 100%;
     height: auto;
@@ -510,48 +509,6 @@ button#project {
     width: 600px;
 }
 
-#blog {
-    color: #edf0f1;
-    text-align: center;
-}
-
-.blog-posts {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-}
-
-.blog-post {
-    width: 300px;
-    margin: 20px;
-    padding: 15px;
-    background-color: #333333;
-    border-radius: 8px;
-    -webkit-transition: -webkit-transform 0.3s ease;
-    transition: -webkit-transform 0.3s ease;
-    -o-transition: transform 0.3s ease;
-    transition: transform 0.3s ease;
-    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-}
-
-.blog-post:hover {
-    -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-            transform: scale(1.05);
-}
-
-.blog-post h3 {
-    color: #0088a9;
-}
-
-.blog-post p {
-    margin-top: 10px;
-}
 
 /* Add styling for the Contact section */
 section#contact {
@@ -652,12 +609,7 @@ footer {
     text-align: center;
 }
 
-.copyright {
-    font-size: 14px;
-}
-
 .copyright a {
-    font-size: 14px;
     text-decoration: underline;
 }
 
@@ -677,7 +629,6 @@ footer {
         -webkit-box-pack: justify;
             -ms-flex-pack: justify;
                 justify-content: space-between;
-        padding: 0 2%;
     }
 
     .headerlogo {
@@ -773,10 +724,6 @@ footer {
                 transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    #about p {
-        font-size: 1em;
-        padding: 0;
-    }
 
     section#contact form textarea {
         width: 100%;
@@ -826,11 +773,6 @@ footer {
                 align-items: center; /* Center items horizontally in the column */
     }
 
-    .project-container {
-        width: 100%; /* Adjust the width for the project container */
-        margin: 0 auto; /* Center the container horizontally */
-    }
-
     .project-details {
         width: 100%; /* Adjust the width for project-details to 100% */
     }
@@ -839,23 +781,6 @@ footer {
         margin-top: 20px; /* Add margin to separate project-details and project-photo */
         width: 100%; /* Adjust the width for project-photo to 100% */
     }
-
-    .filter-buttons {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
-        /* Change to 'row' for smaller screens */
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        /* Center the buttons horizontally on smaller screens */
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        /* Center the buttons vertically in the container */
-    }
-
 
     #social-media-box {
         left: auto;

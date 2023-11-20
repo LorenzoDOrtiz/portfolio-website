@@ -105,7 +105,7 @@ function createFilterButtons() {
     allTags.forEach((tag) => {
         const button = document.createElement('button');
         button.innerText = tag;
-        button.id = tag; // Set the id to tag name for easier reference
+        button.id = tag;
         button.addEventListener('click', () => {
             toggleFilter(tag, button);
         });
@@ -119,6 +119,9 @@ function createFilterButtons() {
         resetFilters();
     });
 }
+
+
+
 
 function toggleFilter(tag) {
     const projects = document.querySelectorAll('.project');
