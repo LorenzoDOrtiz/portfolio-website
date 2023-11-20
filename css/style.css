@@ -334,6 +334,9 @@ button#project {
 #about {
     color: #edf0f1;
     text-align: center;
+    padding-left: 30%;
+    padding-right: 30%;
+
 }
 
 
@@ -724,15 +727,31 @@ footer {
                 transform: rotate(45deg) translate(-5px, -6px);
     }
 
+    
+    #social-media-box {
+        left: auto;
+        /* Reset left property */
+        right: 5px;
+        /* Set the right property */
+        top: auto;
+        padding: 5px;
+        border-radius: 5px;
+        bottom: 15px;
+        /* Adjust bottom property for the desired distance from the bottom */
 
-    section#contact form textarea {
-        width: 100%;
-        resize: vertical;
     }
 
-    section#contact form label {
-        text-align: left;
+    .social-media-link img {
+        width: 30px;
+        /* Adjust size for mobile */
     }
+
+    #about {
+        padding-left: 10%;
+        padding-right: 10%;
+    
+    }
+   
 
     #top-buttons button {
         -webkit-box-align: center;
@@ -782,25 +801,6 @@ footer {
         width: 100%; /* Adjust the width for project-photo to 100% */
     }
 
-    #social-media-box {
-        left: auto;
-        /* Reset left property */
-        right: 5px;
-        /* Set the right property */
-        top: auto;
-        padding: 5px;
-        border-radius: 5px;
-        bottom: 15px;
-        /* Adjust bottom property for the desired distance from the bottom */
-
-    }
-
-    .social-media-link img {
-        width: 30px;
-        /* Adjust size for mobile */
-    }
-
-
     .certification img {
         max-width: 100%;
         height: auto;
@@ -823,4 +823,13 @@ footer {
         resize: vertical;
     }
 
+}
+
+section#contact form textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+section#contact form label {
+    text-align: left;
 }
