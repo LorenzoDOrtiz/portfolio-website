@@ -1,5 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 * {
-    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
     margin: 0;
     padding: 0;
     color: #cccccc;
@@ -8,8 +16,13 @@
 }
 
 #inprogress-label {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     z-index: 100;
     background-color: red;
     position: fixed;
@@ -18,14 +31,21 @@
     right: 0;
     width: 100%;
     text-align: center;
+    background: -webkit-gradient(linear, left top, right top, from(#ff3300), to(#feb47b));
+    background: -o-linear-gradient(left, #ff3300, #feb47b);
     background: linear-gradient(to right, #ff3300, #feb47b);
     background-size: 200% 100%;
-    animation: gradientAnimation 5s ease infinite;
+    -webkit-animation: gradientAnimation 5s ease infinite;
+            animation: gradientAnimation 5s ease infinite;
     color: white;
     padding-top: 5px;
     padding-bottom: 5px;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #close-btn {
@@ -46,6 +66,16 @@
     color: #ddd;
 }
 
+@-webkit-keyframes gradientAnimation {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
 @keyframes gradientAnimation {
     0% {
         background-position: 200% 0;
@@ -60,11 +90,22 @@
     position: fixed;
     left: 15px;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     background-color: #333;
     padding: 15px;
     border-radius: 10px;
@@ -81,12 +122,18 @@
     /* Adjust the size of the social media icons as needed */
     height: auto;
     border-radius: 50%;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
     transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
     /* Add a transition effect for smooth scaling */
 }
 
 .social-media-link:hover img {
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
     /* Scale the social media icon on hover */
 }
 
@@ -106,13 +153,22 @@ h2 {
 }
 
 body {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 0 2%;
     border-bottom: 3px solid #1d1e22;
     position: fixed;
@@ -142,6 +198,8 @@ header {
 }
 
 .nav_links li a {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
 
@@ -156,6 +214,8 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
 
@@ -166,7 +226,8 @@ button:hover {
 .content-section {
     text-align: center;
     padding: 60px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     /* Include padding in the element's total width and height */
     overflow: hidden;
     /* Hide any content that overflows the padding */
@@ -190,19 +251,37 @@ button:hover {
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
 }
 
 #top-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     /* Change to row for horizontal alignment */
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #top-buttons a {
@@ -218,6 +297,8 @@ button:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
 
@@ -264,10 +345,16 @@ button#project {
 
 .filter-container {
 
-    align-items: center;
+    -webkit-box-align: center;
+
+        -ms-flex-align: center;
+
+            align-items: center;
     /* Center the content horizontally */
     border: 2px solid #464a4e;
     border-radius: 5px;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
     max-width: fit-content;
     /* Set a maximum width for the container */
     margin: 0 auto;
@@ -279,7 +366,11 @@ button#project {
 
 .filter-buttons {
 
-    align-items: center;
+    -webkit-box-align: center;
+
+        -ms-flex-align: center;
+
+            align-items: center;
     /* Center the buttons horizontally */
     border-radius: 5px;
 }
@@ -289,6 +380,8 @@ button#project {
     color: #edf0f1;
     border-radius: 5px;
     cursor: pointer;
+    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+    -o-transition: background-color 0.3s ease, color 0.3s ease;
     transition: background-color 0.3s ease, color 0.3s ease;
     border: 3px solid #1e1e1e;
     margin: 5px;
@@ -304,11 +397,15 @@ button#project {
 .reset-button {
     border-radius: 5px;
     cursor: pointer;
+    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+    -o-transition: background-color 0.3s ease, color 0.3s ease;
     transition: background-color 0.3s ease, color 0.3s ease;
     border: 3px solid darkred;
     background-color: rgba(196, 11, 11, 0.8);
     margin: 5px;
     /* Adjust margin for spacing */
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     /* Adjust the width to fit the content */
     padding: 5px 10px;
@@ -323,27 +420,48 @@ button#project {
 
 
 .project {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin-top: 30px;
 }
 
 .project-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 100%; /* Use 100% width for the container */
 }
 
 .project-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
     width: 60%; /* Adjust the width for project-details */
     padding: 0 20px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .project-info {
@@ -355,9 +473,16 @@ button#project {
 }
 
 .project-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .project-buttons a {
@@ -372,14 +497,16 @@ button#project {
 }
 
 .project-photo {
-    flex-shrink: 0; /* Prevent the container from shrinking */
+    -ms-flex-negative: 0;
+        flex-shrink: 0; /* Prevent the container from shrinking */
     width: 40%; /* Adjust the width for project-photo */
 }
 
 .project-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 8px;
 }
 
@@ -398,9 +525,14 @@ button#project {
 }
 
 .blog-posts {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .blog-post {
@@ -409,11 +541,17 @@ button#project {
     padding: 15px;
     background-color: #333333;
     border-radius: 8px;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
     transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .blog-post:hover {
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
 
 .blog-post h3 {
@@ -426,10 +564,19 @@ button#project {
 
 /* Add styling for the Contact section */
 section#contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding-top: 20px;
 }
 
@@ -440,6 +587,8 @@ section#contact form {
 section#contact form label,
 section#contact form input,
 section#contact form textarea {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 15px;
 }
@@ -465,6 +614,8 @@ section#contact form input[type="submit"] {
     border-radius: 5px;
     cursor: pointer;
     padding: 9px 25px;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     ;
 }
@@ -484,6 +635,8 @@ section#contact form input[type="submit"]:hover {
     cursor: pointer;
     opacity: 0;
     /* Start with 0 opacity */
+    -webkit-transition: opacity .8s ease;
+    -o-transition: opacity .8s ease;
     transition: opacity .8s ease;
     /* Add a transition for the opacity property */
 }
@@ -530,7 +683,9 @@ footer {
 
     /* Adjustments for smaller screens */
     header {
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         padding: 0 2%;
     }
 
@@ -541,8 +696,13 @@ footer {
     }
 
     .nav_links {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         width: 70%;
         background-color: #24252a;
         position: fixed;
@@ -551,16 +711,24 @@ footer {
         z-index: 99;
         opacity: 0;
         /* Initially set to 0 */
-        transform: translateY(100%);
+        -webkit-transform: translateY(100%);
+            -ms-transform: translateY(100%);
+                transform: translateY(100%);
         /* Initially off the screen */
+        -webkit-transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
+        transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
+        -o-transition: opacity 0.8s ease, transform 0.8s ease;
         transition: opacity 0.8s ease, transform 0.8s ease;
+        transition: opacity 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
         /* Add transition for smooth effect */
     }
 
     .nav_links.show {
         opacity: 1;
         /* Fade in by setting opacity to 1 */
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+                transform: translateY(0);
     }
 
     .nav_links li {
@@ -593,11 +761,15 @@ footer {
         height: 3px;
         background-color: grey;
         margin: 6px 10px;
+        -webkit-transition: 1s;
+        -o-transition: 1s;
         transition: 1s;
     }
 
     .menu-icon.active div:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
+        -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+            -ms-transform: rotate(-45deg) translate(-5px, 6px);
+                transform: rotate(-45deg) translate(-5px, 6px);
     }
 
     .menu-icon.active div:nth-child(2) {
@@ -605,7 +777,9 @@ footer {
     }
 
     .menu-icon.active div:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
+        -webkit-transform: rotate(45deg) translate(-5px, -6px);
+            -ms-transform: rotate(45deg) translate(-5px, -6px);
+                transform: rotate(45deg) translate(-5px, -6px);
     }
 
     #about p {
@@ -623,7 +797,9 @@ footer {
     }
 
     #top-buttons button {
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
     #top {
@@ -647,9 +823,16 @@ footer {
     }
 
     .project {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        align-items: center; /* Center items horizontally in the column */
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; /* Center items horizontally in the column */
     }
 
     .project-container {
@@ -667,11 +850,18 @@ footer {
     }
 
     .filter-buttons {
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
         /* Change to 'row' for smaller screens */
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         /* Center the buttons horizontally on smaller screens */
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         /* Center the buttons vertically in the container */
     }
 
