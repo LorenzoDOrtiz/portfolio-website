@@ -51,7 +51,7 @@ function send_email($user_name, $user_email, $email_subject, $email_body) {
 
         // Send the email
         if ($mail->send()) {
-            echo 'Email sent successfully.';
+            echo 'Email sent successfully, thank you. If you need to contact me immediently, my number is 509-273-0050.';
         } else {
             echo 'Error sending email: ' . $mail->ErrorInfo;
             return;
