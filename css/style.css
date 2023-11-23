@@ -152,6 +152,7 @@ button {
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
+    color: black;
 }
 button:hover {
     background-color: rgba(52, 152, 219, 0.8);
@@ -215,7 +216,6 @@ button:hover {
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    color:black;
     font-size: 1em;
 }
 #top-buttons button:hover {
@@ -227,9 +227,7 @@ button:hover {
     color: #f39c12;
    /* Highlight color for keywords */
 }
-button#project {
-    margin: 50px;
-}
+
 /* Add styling for the About Me section */
 #about {
     color: #edf0f1;
@@ -341,6 +339,7 @@ button#project {
     padding: 5px 10px;
     background-color: rgba(52, 152, 219, 1);
     border-radius: 5px;
+    color: black;
 }
 .project-buttons a:hover {
     background-color: rgba(52, 152, 219, 0.8);
