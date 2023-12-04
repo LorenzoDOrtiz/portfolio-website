@@ -1,1 +1,1 @@
-Hello! I'm Lorenzo. I'm a software engineering student. Feel free to use my portfolio for your own needs. I am not a web developer, so the website is pretty rough. All I ask is that you leave the credit in the footer. Forks are appreciated so I can see any improvements anyone makes!
+Personal portfolio website. Feel free to use it for your own needs. 
