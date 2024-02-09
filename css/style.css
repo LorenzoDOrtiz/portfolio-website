@@ -353,10 +353,9 @@ button:hover {
 .project-photo img {
     width: 100%;
     border-radius: 8px;
-    max-width: 100%;
+    max-width: 40vw;
    /* Ensure the image doesn't exceed its natural width */
-    max-height: 100%;
-   /* Ensure the image doesn't exceed its natural height */
+
 }
 .certification img {
     width: 40vw;
@@ -569,9 +568,13 @@ footer {
     .project-info {
         max-width: 100%;
    }
-    .project-photo {
-        padding-left:0;
-       ;
+   .project-photo  {
+    padding: 0px;
+
+}
+    .project-photo img {
+        max-width: 80vw;
+
    }
     .certification img {
         max-width: 100%;
