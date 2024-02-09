@@ -142,8 +142,10 @@ header {
 .nav_links li a:hover {
     color: #0088a9;
 }
-button {
+.cta {
     margin-left: 20px;
+}
+button {
     padding: 9px 25px;
     background-color: rgba(52, 152, 219, 1);
     border: none;
