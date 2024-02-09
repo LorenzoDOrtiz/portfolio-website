@@ -358,9 +358,14 @@ button:hover {
 
 }
 .certification img {
-    width: 40vw;
+    width: 30vw;
     border-radius: 8px;
     margin: 30px;
+}
+
+#certification-pictures {
+    display: flex;
+    justify-content: center;
 }
 /* Add styling for the Contact section */
 section#contact {
