@@ -73,14 +73,6 @@ function toggleMenuIcon() {
     });
 }
 
-function closeBanner() {
-    // Get the inprogress-label element
-    var inprogressLabel = document.getElementById('inprogress-label');
-
-    // Hide the inprogress-label
-    inprogressLabel.style.display = 'none';
-}
-
 function extractTags() {
     const projects = document.querySelectorAll('.project');
     allTags = [];
