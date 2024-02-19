@@ -368,6 +368,7 @@ button:hover {
 #certification-pictures {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 /* Add styling for the Contact section */
 section#contact {
@@ -577,32 +578,8 @@ footer {
    }
    .project-photo  {
     padding: 0px;
-
-}
-    .project-photo img {
-        max-width: 80vw;
-
-   }
-    .certification img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        width: 80vw;
-        display: block;
-       /* Ensure it's a block-level element for margin: auto to work */
-        margin: auto;
-       /* Center the image horizontally */
-        margin-top: 20px;
-   }
-    section#contact form input {
-        width: 30vw;
-        height: 2vh;
-   }
-    section#contact form textarea {
-        width: 60vw;
-        resize: vertical;
-   }
-}
-section#contact form label {
-    text-align: left;
+    }
+    #certification-pictures {
+        flex-direction: column;
+    }
 }
