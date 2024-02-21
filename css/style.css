@@ -1,263 +1,204 @@
-/* * Prefixed by https://autoprefixer.github.io * PostCSS: v8.4.14, * Autoprefixer: v10.4.7 * Browsers: last 4 version */
-* {
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-    margin: 0;
-    padding: 0;
+main {
     color: #cccccc;
     font-family: "Proxima Nova";
-    text-decoration: none;
-}
-/* font sizes! */
-h1{
-    font-size: 3.3em 
-}
-h2{
-    font-size: 2.3em 
-}
-h3{
-    font-size: 1.5em 
-}
-#close-btn {
-    cursor: pointer;
-    padding: 5px;
-    color: white;
-    background-color: #333;
-    border-radius: 5px;
-}
-#close-btn:hover {
-    background-color: #555;
-    color: #ddd;
-}
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-   }
-    50% {
-        background-position: 100% 50%;
-   }
-    100% {
-        background-position: 0% 50%;
-   }
-}
-#social-media-box {
-    position: fixed;
-    left: 15px;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 10px;
-    z-index: 99;
-}
-/* Add this CSS for social media icons hover effect */
-.social-media-link img {
-    width: 40px;
-   /* Adjust the size of the social media icons as needed */
-    height: auto;
-    border-radius: 50%;
-    -webkit-transition: -webkit-transform 0.3s ease;
-    transition: -webkit-transform 0.3s ease;
-    -o-transition: transform 0.3s ease;
-    transition: transform 0.3s ease;
-    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-   /* Add a transition effect for smooth scaling */
-}
-.social-media-link:hover img {
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
-   /* Scale the social media icon on hover */
-}
-.wrapper {
-    overflow: hidden;
-   /* Hide any content that overflows the wrapper */
-}
-.container {
-    max-width: 100%;
-    margin: 0 auto;
-}
-body {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 0 2%;
-    border-bottom: 3px solid #1d1e22;
-    position: fixed;
-    top: 0%;
-    right: 0%;
-    left: 0%;
-    z-index: 99;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    
-}
-.headerlogo {
-    cursor: pointer;
-    height: 50px;
-    padding: 10px;
-    margin-right: auto;
-}
-.nav_links {
-    list-style: none;
-}
-/* Add styling for the navigation links */
-.nav_links li {
-    display: inline-block;
-    padding: 0px 20px;
-}
-.nav_links li a {
-    -webkit-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    font-weight: 900;
-}
-.nav_links li a:hover {
-    color: #0088a9;
-}
-.cta {
-    margin-left: 20px;
-}
-button {
-    padding: 9px 25px;
-    background-color: rgba(52, 152, 219, 1);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    color: black;
-}
-button:hover {
-    background-color: rgba(52, 152, 219, 0.8);
-}
-.content-section {
-    text-align: center;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-   /* Include padding in the element's total width and height */
-    overflow: hidden;
-   /* Hide any content that overflows the padding */
-}
-/* Add the alternating background colors */
-.content-section:nth-child(odd) {
-    background-color: #222222;
-   /* Lighter color for odd sections */
-}
-.content-section:nth-child(even) {
-    background-color: #1e1e1e;
-   /* Darker color for even sections */
-}
-/* Adjust the styling of the 'top' section to accommodate the padding */
-#top {
-    background-image: url("/resources/images/backgrounds/42.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    text-align: center;
+    font-weight: 500;
 }
 
-#top-buttons a {
-    margin: 10px;
-   /* Adjust the spacing around buttons */
+h1 {
+    font-size: 3.3em; 
 }
-#top-buttons button {
-    margin-top: 15px;
-    width: 100px;
-   /* Set a fixed width for the buttons */
-    background-color: rgba(52, 152, 219, 1);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    font-size: 1em;
+
+h2 {
+    font-size: 2.3em; 
 }
-#top-buttons button:hover {
-    background-color: rgba(52, 152, 219, 0.8);
+
+h3 {
+    font-size: 1.5em;
 }
-/* Adjust the styling of the 'top' section text */
 
 .highlight {
     color: #f39c12;
    /* Highlight color for keywords */
 }
 
-/* Add styling for the About Me section */
-#about {
-    color: #edf0f1;
+/* SECTIONS */
+
+section {
     text-align: center;
-    padding-left: 30%;
-    padding-right: 30%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
-#about strong {
-    color: #0088a9;
-   /* Highlight color for strong tags */
+
+section:nth-child(odd) {
+    background-color: #222222;
+
 }
-.filter-container {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+section:nth-child(even) {
+    background-color: #1e1e1e;
+
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap; /* Allow projects to wrap to the next row */
+    justify-content: center; /* Align projects starting from the left */
+}
+
+.project {
+    background-color: #1e1e1e;
+    z-index: 98;
+    margin: 20px;
+    width: calc(50% - 40px); /* Distribute projects equally in three columns, considering margins */
+    box-sizing: border-box; /* Include padding and borders in the width calculation */
+    display: flex; /* Use flexbox for consistent height of project cards */
+    flex-direction: column; /* Stack content vertically inside project cards */
+}
+
+.project h2 {
+    margin-bottom: 10px; /* Add some space between heading and paragraph */
+}
+
+.project p {
+    flex-grow: 1; /* Let the paragraph grow to take remaining space */
+    margin-bottom: 10px; /* Add some space between paragraphs and tags */
+}
+
+.project-tags {
+    margin-top: auto; /* Push tags to the bottom of the project card */
+}
+
+.project-photo {
+    border-radius: 8px;
+}
+
+.project-link-github-buttons img{
+    width: 50px;
+    margin: 8px;
+}
+
+.project-link-github-buttons img:hover{
+    transform: scale(1.1);
+
+}
+
+.project-link-demo-buttons img{
+    width: 46px;
+    margin: 8px;
+}
+
+.project-link-demo-buttons img:hover{
+    transform: scale(1.1);
+
+}
+
+#certifications {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+#certification-pictures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.certification {
+    flex: 0 1 calc(40% - 40px); /* Two items per row with margin */
+    margin: 20px; /* Adjust margin as needed */
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+}
+
+.certification img {
+    max-width: 100%; /* Ensure images don't exceed container width */
+    border-radius: 8px;
+}
+
+
+
+
+
+#landing-section {
+    background-image: url("/resources/images/backgrounds/42.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
-   /* Center the content horizontally */
-    border: 2px solid #464a4e;
-    border-radius: 5px;
-    max-width: -webkit-fit-content;
-    max-width: -moz-fit-content;
-    max-width: 60%;
-   /* Set a maximum width for the container */
-    margin: 0 auto;
-   /* Center the container horizontally */
+    text-align: center;
+}
+
+/* BUTTONS */
+
+button {
+    padding: 9px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    transition: all 0.5s ease 0s;
+    transform: scale(1.1);
+}
+
+.landing-section-button {
+    background-color: rgba(33, 151, 230, 0.8);
+
+}
+
+.landing-section-button:hover {
+    background-color: rgb(51, 164, 240);
+}
+
+/* SOCIAL MEDIA BOX*/
+
+#social-media-box {
+    position: fixed;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
     padding: 10px;
-   /* Add padding for spacing */
+    border-radius: 10px;
+    z-index: 99;
+}
+
+.social-media-link img {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+    
+}
+.social-media-link:hover img {
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+}
+
+/* FILTER CONTAINER */
+
+#filter-container {
+    align-items: center;
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 10px;
     margin-top: 15px;
-    border: 3px solid #2e3135;
+    
 }
 .filter-buttons {
     justify-content: center;
@@ -266,164 +207,31 @@ button:hover {
 .filter-buttons button {
     background-color: #464a4e;
     color: #edf0f1;
-    border-radius: 5px;
-    cursor: pointer;
-    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
-    -o-transition: background-color 0.3s ease, color 0.3s ease;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    margin: 5px;
     width: 100px;
-   /* Set a fixed width for all buttons, adjust as needed */
-    white-space: nowrap;
-   /* Prevent button text from wrapping */
 }
-.filter-buttons button.active, .filter-buttons button:hover {
+#filter-buttons button.active, .filter-buttons button:hover {
     background-color: rgba(52, 152, 219, 0.8);
     color: #fff;
 }
-.reset-button {
+#reset-button {
     border-radius: 5px;
     cursor: pointer;
-    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
-    -o-transition: background-color 0.3s ease, color 0.3s ease;
-    transition: background-color 0.3s ease, color 0.3s ease;
     border: 3px solid darkred;
-    background-color: rgba(196, 11, 11, 0.8);
-    margin: 5px;
-    width: 100px;
-   /* Set a fixed width for the reset button, adjust as needed */
-    padding: 5px 10px;
+    background-color: rgba(207, 29, 29, 0.8);
     white-space: nowrap;
-   /* Prevent button text from wrapping */
+    width: 100px;
 }
-.reset-button:hover {
+
+#reset-button:hover {
     background-color: rgb(252, 0, 0);
-    color: #fff;
-}
-#projects{
-    display: flex;
-    flex-direction: column;
-}
-.project {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.project-info {
-    display: flex;
-    flex-direction: column;
-    max-width: 30vw;
-    justify-content: center;
-}
-.project-tags {
-    margin-top: 10px;
-}
-.project-buttons {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-.project-buttons a {
-    margin: 10px;
-    padding: 5px 10px;
-    background-color: rgba(52, 152, 219, 1);
-    border-radius: 5px;
-    color: black;
-}
-.project-buttons a:hover {
-    background-color: rgba(52, 152, 219, 0.8);
-}
-.project-photo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left:100px;
-}
-.project-photo img {
-    width: 100%;
-    border-radius: 8px;
-    max-width: 40vw;
-   /* Ensure the image doesn't exceed its natural width */
-
-}
-.certification img {
-    width: 30vw;
-    border-radius: 8px;
-    margin: 30px;
 }
 
-#certification-pictures {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-/* Add styling for the Contact section */
-section#contact {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding-top: 20px;
-}
-section#contact form {
-    max-width: 100%;
-}
-section#contact form label, section#contact form input, section#contact form textarea {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 15px;
-}
-section#contact form input, section#contact form textarea {
-    color: black;
-}
-section#contact form input {
-    width: 10vw;
-    height: 2vh;
-}
-section#contact form textarea {
-    width: 40vw;
-    resize: vertical;
-}
-section#contact form input[type="submit"] {
-    background-color: rgba(52, 152, 219, 1);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 9px 25px;
-    -webkit-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    ;
-}
-section#contact form input[type="submit"]:hover {
-    background-color: rgba(52, 152, 219, 0.8);
-}
+
+/* BACK TO TOP BUTTON */
+
 #backToTopBtn {
     position: fixed;
-    bottom: 40px;
+    bottom: 45px;
     right: 20px;
     background-color: rgba(52, 152, 219, 1);
     padding: 10px 15px;
@@ -431,155 +239,49 @@ section#contact form input[type="submit"]:hover {
     border-radius: 5px;
     cursor: pointer;
     opacity: 0;
-   /* Start with 0 opacity */
-    -webkit-transition: opacity .8s ease;
-    -o-transition: opacity .8s ease;
     transition: opacity .8s ease;
-   /* Add a transition for the opacity property */
+    color: whitesmoke;
 }
 #backToTopBtn.show {
     opacity: 1;
-   /* Show the button by setting opacity to 1 */
+
 }
 #backToTopBtn:hover {
     background-color: rgba(52, 152, 219, 0.8);
+    transition: all 0.5s ease 0s;
+    transform: scale(1.1);
 }
+
+/* FOOTER */
+
 footer {
     background-color: #1a1a1a;
     padding: 10px 30px;
     border-top: 3px solid #1d1e22;
+    color: whitesmoke;
+    
 }
 .footer-content {
     text-align: center;
+    
 }
-.copyright a {
+
+footer a {
     text-decoration: underline;
+    color: whitesmoke;
 }
-/* Existing styles remain unchanged */
+
+footer a:hover {
+    color: rgba(52, 152, 219, 1); 
+}
+
 @media only screen and (max-width: 600px) {
-   /* Adjustments for smaller screens */
-    header {
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-   }
-    .headerlogo {
-        width: 150px;
-        margin: 0 auto;
-       /* Center the logo horizontally */
-   }
-    .nav_links {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        width: 70%;
-        background-color: #24252a;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        z-index: 99;
-        opacity: 0;
-       /* Initially set to 0 */
-        -webkit-transform: translateY(100%);
-        -ms-transform: translateY(100%);
-        transform: translateY(100%);
-       /* Initially off the screen */
-        -webkit-transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
-        transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
-        -o-transition: opacity 0.8s ease, transform 0.8s ease;
-        transition: opacity 0.8s ease, transform 0.8s ease;
-        transition: opacity 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
-       /* Add transition for smooth effect */
-   }
-    .nav_links.show {
-        opacity: 1;
-       /* Fade in by setting opacity to 1 */
-        -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-        transform: translateY(0);
-   }
-    .nav_links li {
-        padding: 15px;
-   }
-    .cta {
-        display: none;
-   }
-    #backToTopBtn {
-        display: none;
-   }
-    .menu-icon {
-        cursor: pointer;
-        display: block;
-        position: fixed;
-       /* Set the position to fixed for absolute positioning on the screen */
-        bottom: 40px;
-       /* Adjust the distance from the bottom */
-        right: 22px;
-       /* Adjust the distance from the right */
-        width: 25px;
-        margin-top: 5px;
-   }
-    .menu-icon div {
-        width: 30px;
-        height: 3px;
-        background-color: grey;
-        margin: 6px 10px;
-        -webkit-transition: 1s;
-        -o-transition: 1s;
-        transition: 1s;
-   }
-    .menu-icon.active div:nth-child(1) {
-        -webkit-transform: rotate(-45deg) translate(-5px, 6px);
-        -ms-transform: rotate(-45deg) translate(-5px, 6px);
-        transform: rotate(-45deg) translate(-5px, 6px);
-   }
-    .menu-icon.active div:nth-child(2) {
-        opacity: 0;
-   }
-    .menu-icon.active div:nth-child(3) {
-        -webkit-transform: rotate(45deg) translate(-5px, -6px);
-        -ms-transform: rotate(45deg) translate(-5px, -6px);
-        transform: rotate(45deg) translate(-5px, -6px);
-   }
-    #social-media-box {
-        left: auto;
-       /* Reset left property */
-        right: 5px;
-       /* Set the right property */
-        top: auto;
-        padding: 5px;
-        border-radius: 5px;
-        bottom: 35px;
-        width: 25px;
-       /* Adjust bottom property for the desired distance from the bottom */
-   }
-    .social-media-link img {
-        width: 30px;
-       /* Adjust size for mobile */
-   }
-    #about {
-        padding-left: 10%;
-        padding-right: 10%;
-   }
-    #projects{
-        flex-direction: column;
-   }
-    .project {
-        display: flex;
-        flex-direction: column;
-        margin-top: 30px;
-   }
-    .project-info {
-        max-width: 100%;
-   }
-   .project-photo  {
-    padding: 0px;
+    #projects .project {
+        width: 100%; /* Set projects to take up full width */
     }
+
     #certification-pictures {
         flex-direction: column;
     }
 }
+

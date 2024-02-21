@@ -4,7 +4,6 @@ let allTags = [];
 document.addEventListener('DOMContentLoaded', () => {
     smoothScrolling();
     backToTopButton();
-    toggleMenuIcon();
     extractTags();
     createFilterButtons();
 });
@@ -63,16 +62,6 @@ function backToTopButton() {
     }
 }
 
-function toggleMenuIcon() {
-    const menuIcon = document.querySelector('.menu-icon');
-    const navLinks = document.querySelector('.nav_links');
-
-    menuIcon.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
-        menuIcon.classList.toggle('active');
-    });
-}
-
 function extractTags() {
     const projects = document.querySelectorAll('.project');
     allTags = [];
@@ -90,6 +79,7 @@ function extractTags() {
 
     console.log(allTags);
 }
+
 
 function createFilterButtons() {
     const filterButtonsContainer = document.getElementById('filter-buttons');
@@ -128,7 +118,7 @@ function toggleFilter(tag) {
         const projectTags = projectTagsString.split(', ');
 
         // Check if at least one selected tag is present in the project
-        const showProject = Array.from(document.querySelectorAll('.filter-buttons button.active')).some((activeButton) => projectTags.includes(activeButton.innerText));
+        const showProject = Array.from(document.querySelectorAll('#filter-buttons button.active')).some((activeButton) => projectTags.includes(activeButton.innerText));
 
         // Toggle the project visibility
         project.style.display = showProject ? 'flex' : 'none'; // Set display to 'flex' to maintain the flexbox layout
@@ -149,8 +139,9 @@ function toggleFilter(tag) {
     });
 }
 
+
 function resetFilters() {
-    const buttons = document.querySelectorAll('.filter-buttons button');
+    const buttons = document.querySelectorAll('#filter-buttons button');
 
     // Remove 'active' class from all buttons
     buttons.forEach((button) => {
@@ -163,3 +154,4 @@ function resetFilters() {
         project.style.display = 'flex'; // Set display to 'flex' to maintain the flexbox layout
     });
 }
+
