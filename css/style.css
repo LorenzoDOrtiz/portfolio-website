@@ -62,6 +62,7 @@ section:nth-child(even) {
 
 .project h2 {
     margin-bottom: 10px; /* Add some space between heading and paragraph */
+    margin-top: 10px;
 }
 
 .project p {
@@ -84,6 +85,7 @@ section:nth-child(even) {
 
 .project-link-github-buttons img:hover{
     transform: scale(1.1);
+    transition: all 0.5s ease 0s;
 
 }
 
@@ -94,6 +96,7 @@ section:nth-child(even) {
 
 .project-link-demo-buttons img:hover{
     transform: scale(1.1);
+    transition: all 0.5s ease 0s;
 
 }
 
@@ -146,6 +149,8 @@ button {
     border-radius: 3px;
     cursor: pointer;
     font-weight: bold;
+    
+    
 }
 
 button:hover {
@@ -154,7 +159,9 @@ button:hover {
 }
 
 .landing-section-button {
-    background-color: rgba(33, 151, 230, 0.8);
+    background-color: rgb(33, 151, 230);
+    width: calc(30%); /* Distribute projects equally in three columns, considering margins */
+    box-sizing: border-box; /* Include padding and borders in the width calculation */
 
 }
 
@@ -210,14 +217,14 @@ button:hover {
     width: 100px;
 }
 #filter-buttons button.active, .filter-buttons button:hover {
-    background-color: rgba(52, 152, 219, 0.8);
+    background-color: rgb(52, 152, 219);
     color: #fff;
 }
 #reset-button {
     border-radius: 5px;
     cursor: pointer;
     border: 3px solid darkred;
-    background-color: rgba(207, 29, 29, 0.8);
+    background-color: rgb(207, 29, 29);
     white-space: nowrap;
     width: 100px;
 }
