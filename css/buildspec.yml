@@ -1,14 +1,11 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - npm install
   build:
     commands:
-      - npm run buildProduction
+      - echo "Building project..."
+      # You might not need any build commands for HTML, CSS, and vanilla JS
 
 artifacts:
   files:
     - '**/*'
-  base-directory: 'dist'
